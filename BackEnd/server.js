@@ -14,6 +14,6 @@ app.get('/', (req, res) => res.send('API Running'));
 //Sign Up
 app.use('/api/users', require('./routes/api/users'));
 //Sign In
-//app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/auth', require('./routes/api/auth'));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
