@@ -13,7 +13,7 @@ class Login extends React.Component{
 
     render(){
         return (
-            <Form action="/" method="GET" encType="multipart/form-data">
+            <Form action="/" method="POST" >
                 <Form.Field>
                     <label>Name</label>
                     <input placeholder='Name' name="name" type="text"/>
