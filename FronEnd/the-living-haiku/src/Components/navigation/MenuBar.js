@@ -1,6 +1,7 @@
 import React from "react"
 import 'semantic-ui-css/semantic.min.css'
 import { Image, List } from 'semantic-ui-react'
+//import "./MenuBar.css"
 // import { Login } from "../../Components"
 import {
     BrowserRouter as Router,
@@ -8,9 +9,15 @@ import {
     Route,
     Link
   } from "react-router-dom";
-import PageNotFound from "../PageNotFound.js";
+//import PageNotFound from "../PageNotFound.js";
 import Login from "../Login";
+//import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen"
+import ProfileScreen from "../../Screens/ProfileScreen/ProfileScreen"
 import HomeScreen from "../../Screens/HomeScreen/HomeScreen"
+
+//TEST IMPORT
+import Test from '../../Screens/ProfileScreen/ProfileScreen'
+import RegisterScreen from "../../Screens/RegisterScreen/RegisterScreen";
 
 class MenuBar extends React.Component {
     constructor(props){
@@ -24,8 +31,9 @@ class MenuBar extends React.Component {
         return (
             <Router>
                 <div id="menuBarContainer">
+                <Image id="image" src='https://react.semantic-ui.com/images/wireframe/image.png' size='tiny' />
 
-                <List animated verticalAlign='middle'>
+                <List id="menu" animated verticalAlign='middle'>
                     <List.Item>
                         <Image avatar src='https://react.semantic-ui.com/images/avatar/small/helen.jpg' />
                         <List.Content>
@@ -50,17 +58,28 @@ class MenuBar extends React.Component {
                             </List.Header>
                         </List.Content>
                     </List.Item>
+                    <List.Item>
+                        <Image avatar src='https://react.semantic-ui.com/images/avatar/small/daniel.jpg' />
+                        <List.Content>
+                            <List.Header>
+                                <Link to="/test">test</Link>
+                            </List.Header>
+                        </List.Content>
+                    </List.Item>
                 </List>
 
                 <Switch>
                     <Route path="/Logout">
-                        <Login />
+                        <RegisterScreen />
                     </Route>
                     <Route path="/Profile">
-                        <Users />
+                        <ProfileScreen />
+                    </Route>
+                    <Route path="/test">
+                        <Test />
                     </Route>
                     <Route path="/">
-                        <HomeScreen />
+                        <HomeScreen/>
                     </Route>
                 </Switch>
                 </div>
@@ -69,17 +88,7 @@ class MenuBar extends React.Component {
     }
 }
 
-function Home() {
-    return <h2>Home</h2>;
-  }
-  
-  function About() {
-    return <h2>About</h2>;
-  }
-  
-  function Users() {
-    return <h2>Users</h2>;
-  }
+
 
 export default MenuBar;
 // export const Navigation = () => (

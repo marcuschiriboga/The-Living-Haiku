@@ -1,0 +1,17 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: black solid 1px;
+    border-radius: 5px;
+    height: 100px;
+    align-items: center;
+}
+
+#image {
+    margin-left: 5px;
+}
+
+#signIn {
+    margin-right: 5px;
+}
