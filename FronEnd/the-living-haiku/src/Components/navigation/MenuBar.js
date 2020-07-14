@@ -10,14 +10,15 @@ import {
     Link
   } from "react-router-dom";
 //import PageNotFound from "../PageNotFound.js";
-import Login from "../Login";
+
 //import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen"
 import ProfileScreen from "../../Screens/ProfileScreen/ProfileScreen"
 import HomeScreen from "../../Screens/HomeScreen/HomeScreen"
 
 //TEST IMPORT
-import Test from '../../Screens/ProfileScreen/ProfileScreen'
+//import Test from '../../Screens/ProfileScreen/ProfileScreen'
 import RegisterScreen from "../../Screens/RegisterScreen/RegisterScreen";
+import NavBar from "./NavBar/NavBar";
 
 class MenuBar extends React.Component {
     constructor(props){
@@ -76,7 +77,7 @@ class MenuBar extends React.Component {
                         <ProfileScreen />
                     </Route>
                     <Route path="/test">
-                        <Test />
+                        <NavBar />
                     </Route>
                     <Route path="/">
                         <HomeScreen/>

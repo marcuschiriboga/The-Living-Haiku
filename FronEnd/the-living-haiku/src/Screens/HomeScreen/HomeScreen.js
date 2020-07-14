@@ -4,6 +4,7 @@ import { Divider, Container} from 'semantic-ui-react'
 import RandomHaikuGen from '../../Components/RandomHaikuGen'
 import LeftSideBar from '../../Components/LeftSideBar'
 import SignInBar from '../../Components/navigation/SignInBar'
+import NavBar from '../../Components/navigation/NavBar/NavBar';
 
 class HomeScreen extends React.Component {
     constructor(props){
@@ -17,7 +18,7 @@ class HomeScreen extends React.Component {
     render(){
         return (
             <Container>
-                <SignInBar />
+                <NavBar/>
                 <Divider />
                 <Container>
                     <LeftSideBar />

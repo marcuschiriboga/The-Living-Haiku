@@ -1,0 +1,14 @@
+#navContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(255, 127, 80, 0.171);
+}
+
+#dropDown {
+  margin: 10px 15px 10px 10px;
+}
+#image {
+  margin: 10px 10px 10px 15px;
+  height: 60px;
+}
