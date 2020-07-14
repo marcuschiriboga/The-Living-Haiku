@@ -23,7 +23,7 @@ router.post(
 		if (!errors.isEmpty()) {
 			return res.status(400).json({ errors: errors.array() });
 		}
-		const user = ({ name, email, password } = req.body);
+		const { name, email, password } = req.body;
 
 		try {
 			//Check to see if there is already a user with the email
@@ -33,6 +33,9 @@ router.post(
 					errors: [ { message: 'User Already Exist' } ]
 				});
 			}
+			// const rando = Math.floor(Math.random() * (0 - 8000 + 1) + 0);
+
+			// const avatar = `http://api.adorable.io/avatars/200/${rando}.png`;
 
 			user = new User({
 				name,
