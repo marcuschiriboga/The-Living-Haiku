@@ -1,0 +1,21 @@
+#profileContainer{
+    display: flex;
+    flex-direction: row;
+    background: rgba(168, 158, 158, 0.199);
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+#leftSideBar{
+    margin: 10px 10px 10px 10px;
+    
+}
+
+#profileComponent{
+    margin: 10px 10px 10px 10px;
+    width: 500px;
+    
+    
+}
+
+
