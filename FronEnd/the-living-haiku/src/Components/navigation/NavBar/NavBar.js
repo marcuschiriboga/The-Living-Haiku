@@ -4,7 +4,7 @@ import faker from 'faker'
 import 'semantic-ui-css/semantic.min.css'
 import './NavBar.css'
 import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button  } from "semantic-ui-react"
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //need to figure this out 100%
 const source = _.times(5, () => ({
@@ -55,10 +55,25 @@ const friendOptions = [
 
 //button/dropdown
 const options = [
-    { key: 'Home', icon: <i class="home icon"></i>, text: 'Home', value: 'Home' },
-    { key: 'Profile', icon: <i class="user icon"></i>, text: 'Profile', value: 'Profile' },
-    { key: 'Logout', icon: <i class="sign out alternate icon"></i>, text: 'Logout', value: 'Logout' },
-  ]
+  {
+    key: "Home",
+    icon: <i class="home icon"></i>,
+    text: <Link to="/">Home</Link>,
+    value: "Home",
+  },
+  {
+    key: "Profile",
+    icon: <i class="user icon"></i>,
+    text: <Link to="/Profile">Profile</Link>,
+    value: "Profile",
+  },
+  {
+    key: "Logout",
+    icon: <i class="sign out alternate icon"></i>,
+    text: <Link to="/Logout">Logout</Link>,
+    value: "Logout",
+  },
+];
   
 
 class NavBar extends React.Component {

@@ -30,11 +30,16 @@ class MenuBar extends React.Component {
     }
     render(){
         return (
-            <Router>
-                <div id="menuBarContainer">
-                <Image id="image" src='https://react.semantic-ui.com/images/wireframe/image.png' size='tiny' />
+          <Router>
 
-                <List id="menu" animated verticalAlign='middle'>
+            <div id="total_page_container">
+            <div className="title_bar">
+              <h1>生きている俳句</h1>
+              <h3>The Living Haiku</h3>
+            </div>
+              {/* <Image id="image" src='https://react.semantic-ui.com/images/wireframe/image.png' size='tiny' /> */}
+
+              {/* <List id="menu" animated verticalAlign='middle'>
                     <List.Item>
                         <Image avatar src='https://react.semantic-ui.com/images/avatar/small/helen.jpg' />
                         <List.Content>
@@ -67,25 +72,25 @@ class MenuBar extends React.Component {
                             </List.Header>
                         </List.Content>
                     </List.Item>
-                </List>
+                </List> */}
 
-                <Switch>
-                    <Route path="/Logout">
-                        <RegisterScreen />
-                    </Route>
-                    <Route path="/Profile">
-                        <ProfileScreen />
-                    </Route>
-                    <Route path="/test">
-                        <NavBar />
-                    </Route>
-                    <Route path="/">
-                        <HomeScreen/>
-                    </Route>
-                </Switch>
-                </div>
-            </Router>
-        )
+              <Switch>
+                <Route path="/Logout">
+                  <RegisterScreen />
+                </Route>
+                <Route path="/Profile">
+                  <ProfileScreen />
+                </Route>
+                <Route path="/test">
+                  <NavBar />
+                </Route>
+                <Route path="/">
+                  <HomeScreen />
+                </Route>
+              </Switch>
+            </div>
+          </Router>
+        );
     }
 }
 
