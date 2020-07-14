@@ -21,15 +21,29 @@ class ProfileScreen extends React.Component {
         return (
             <Container>
                 <NavBar/>
+                
                 <Divider />
+                <div id="bg">
+                    <div class="scene">
+                    <div class="background">
+                        <div class="sun" />
+
+                        </div>
+                    </div>
+                </div>
                 <Container id="profileContainer">
-                <Container id="leftSideBar">
-                    <LeftSideBar /></Container>
+                <Container id="leftSideBar">                        
+                    <LeftSideBar />
+                    <div class="moon" />
+                    </Container>
                 <Container id="profileComponent">
                     <ProfileComponent /></Container>
                 
                   
                 </Container>
+
+                
+
             </Container>
             
         )
