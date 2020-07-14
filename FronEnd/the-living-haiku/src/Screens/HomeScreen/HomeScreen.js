@@ -1,5 +1,6 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css'
+import './HomeScreen.css'
 import { Divider, Container} from 'semantic-ui-react'
 import RandomHaikuGen from '../../Components/RandomHaikuGen'
 import LeftSideBar from '../../Components/LeftSideBar'
@@ -17,10 +18,10 @@ class HomeScreen extends React.Component {
 
     render(){
         return (
-            <Container>
+            <Container >
                 <NavBar/>
                 <Divider />
-                <Container>
+                <Container id="homeContainer">
                     <LeftSideBar />
                     <RandomHaikuGen />
                 </Container>

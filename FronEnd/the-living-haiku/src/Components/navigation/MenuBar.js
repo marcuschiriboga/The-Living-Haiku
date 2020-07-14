@@ -1,6 +1,7 @@
 import React from "react"
 import 'semantic-ui-css/semantic.min.css'
 import { Image, List } from 'semantic-ui-react'
+import './MenuBar.css'
 //import "./MenuBar.css"
 // import { Login } from "../../Components"
 import {
