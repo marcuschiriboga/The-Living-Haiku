@@ -1,7 +1,7 @@
 {
   "hosting": {
     "firebase": "thelivinghaiku",
-    "public": "FronEnd/the-living-haiku/public",
+    "public": "FronEnd/the-living-haiku/build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
 }
