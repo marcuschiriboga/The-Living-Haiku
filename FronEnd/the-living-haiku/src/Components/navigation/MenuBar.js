@@ -1,6 +1,7 @@
 import React from "react"
 import 'semantic-ui-css/semantic.min.css'
 import { Image, List } from 'semantic-ui-react'
+import './MenuBar.css'
 //import "./MenuBar.css"
 // import { Login } from "../../Components"
 import {
@@ -10,14 +11,15 @@ import {
     Link
   } from "react-router-dom";
 //import PageNotFound from "../PageNotFound.js";
-import Login from "../Login";
+
 //import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen"
 import ProfileScreen from "../../Screens/ProfileScreen/ProfileScreen"
 import HomeScreen from "../../Screens/HomeScreen/HomeScreen"
 
 //TEST IMPORT
-import Test from '../../Screens/ProfileScreen/ProfileScreen'
+//import Test from '../../Screens/ProfileScreen/ProfileScreen'
 import RegisterScreen from "../../Screens/RegisterScreen/RegisterScreen";
+import NavBar from "./NavBar/NavBar";
 
 class MenuBar extends React.Component {
     constructor(props){
@@ -29,11 +31,16 @@ class MenuBar extends React.Component {
     }
     render(){
         return (
-            <Router>
-                <div id="menuBarContainer">
-                <Image id="image" src='https://react.semantic-ui.com/images/wireframe/image.png' size='tiny' />
+          <Router>
 
-                <List id="menu" animated verticalAlign='middle'>
+            <div id="total_page_container">
+            <div className="title_bar">
+              <h1>生きている俳句</h1>
+              <h3>The Living Haiku</h3>
+            </div>
+              {/* <Image id="image" src='https://react.semantic-ui.com/images/wireframe/image.png' size='tiny' /> */}
+
+              {/* <List id="menu" animated verticalAlign='middle'>
                     <List.Item>
                         <Image avatar src='https://react.semantic-ui.com/images/avatar/small/helen.jpg' />
                         <List.Content>
@@ -66,25 +73,25 @@ class MenuBar extends React.Component {
                             </List.Header>
                         </List.Content>
                     </List.Item>
-                </List>
+                </List> */}
 
-                <Switch>
-                    <Route path="/Logout">
-                        <RegisterScreen />
-                    </Route>
-                    <Route path="/Profile">
-                        <ProfileScreen />
-                    </Route>
-                    <Route path="/test">
-                        <Test />
-                    </Route>
-                    <Route path="/">
-                        <HomeScreen/>
-                    </Route>
-                </Switch>
-                </div>
-            </Router>
-        )
+              <Switch>
+                <Route path="/Logout">
+                  <RegisterScreen />
+                </Route>
+                <Route path="/Profile">
+                  <ProfileScreen />
+                </Route>
+                <Route path="/test">
+                  <NavBar />
+                </Route>
+                <Route path="/">
+                  <HomeScreen />
+                </Route>
+              </Switch>
+            </div>
+          </Router>
+        );
     }
 }
 
