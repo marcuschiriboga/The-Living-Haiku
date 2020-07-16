@@ -8,8 +8,9 @@
 
 #leftSideBar{
     margin: 10px 10px 10px 10px;
-    
 }
+
+
 
 #profileComponent{
     margin: 10px 10px 10px 10px;
@@ -17,25 +18,17 @@
     
     
 }
+/* background: #e4e4cd; */
 
-html,
 body {
-    background: #1f1e38;
-    background-image: linear-gradient(75deg, 
-    #1f1e38 0%,
-        #29284c 10%,
-        #717ae1 60%,
+     background:  linear-gradient(90deg, 
+        #717ae1 40%,
         #75e2fa 90%
-        );
+        ); 
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-#bg{
-    display: flex;
-    align-items: center;
+    /* overflow: hidden; */
+    z-index: 1; 
 }
 
 Form {
@@ -44,7 +37,7 @@ Form {
     background: rgba(168, 158, 158, 0.199);
     position: absolute;
     width: 500px;
-    height: 400px;
+    height: 350px;
     padding: 20px;
     z-index: 2;
 }
@@ -59,4 +52,3 @@ Form {
     background-color: #d6d9f6;
     box-shadow: 0 0 30px #d6d9f6, 0 0 20px #d6d9f6, 0 0 30px #d6d9f6, 0 0 40px #d6d9f6, 0 0 50px #75e2fa, 0 0 100px #d6d9f6;;
 }
-

@@ -23,14 +23,7 @@ class ProfileScreen extends React.Component {
                 <NavBar/>
                 
                 <Divider />
-                <div id="bg">
-                    <div class="scene">
-                    <div class="background">
-                        <div class="sun" />
-
-                        </div>
-                    </div>
-                </div>
+                
                 <Container id="profileContainer">
                 <Container id="leftSideBar">                        
                     <LeftSideBar />
