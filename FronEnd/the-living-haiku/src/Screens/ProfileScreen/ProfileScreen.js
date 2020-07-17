@@ -36,10 +36,44 @@ class ProfileScreen extends React.Component {
             <ProfileComponent />
           </Container>
         </Container>
-        <PoemEntry />
+        
       </Container>
     );
   }
+
+    // constructor(props){
+    //     super(props)
+
+    //     this.state = {
+
+    //     }
+    // }
+
+    // render(){
+    //     return (
+    //         <Container>
+    //             <NavBar/>
+                
+    //             <Divider />
+                
+    //             <Container id="profileContainer">
+    //             <Container id="leftSideBar">                        
+    //                 <LeftSideBar />
+    //                 <div class="moon" />
+    //                 </Container>
+    //             <Container id="profileComponent">
+    //                 <ProfileComponent /></Container>
+                
+                  
+    //             </Container>
+
+                
+
+    //         </Container>
+            
+    //     )
+    // }
+
 }
 
 export default ProfileScreen;

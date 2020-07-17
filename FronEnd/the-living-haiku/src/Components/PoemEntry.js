@@ -11,22 +11,22 @@ class Login extends React.Component {
 
   render() {
     return (
-      <Form action="/" method="POST">
+      <Form classname="haiku_form" action="/" method="POST" >
         <Form.Field>
-          <label>title</label>
-          <input placeholder="Name" name="name" type="text" />
+          <label>Title</label>
+          <input placeholder="Title of your Haiku" name="name" type="text" />
         </Form.Field>
         <Form.Field>
-          <label>stanza 1</label>
-          <input placeholder="Name" name="stanza1" type="text" />
+          <label>Stanza 1</label>
+          <input placeholder="5 syllables" name="stanza1" type="text" />
         </Form.Field>
         <Form.Field>
-          <label>stanza 2</label>
-          <input placeholder="Name" name="stanza2" type="text" />
+          <label>Stanza 2</label>
+          <input placeholder="7 syllables" name="stanza2" type="text" />
         </Form.Field>
         <Form.Field>
-          <label>stanza 3</label>
-          <input placeholder="Name" name="stanza3" type="text" />
+          <label>Stanza 3</label>
+          <input placeholder="5 syllables" name="stanza3" type="text" />
         </Form.Field>
         <Button type="submit">Submit</Button>
       </Form>
