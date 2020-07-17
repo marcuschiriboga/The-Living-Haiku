@@ -25,15 +25,15 @@ const PoemsSchema = new Schema({
 				require: true
 			}
 		}
-	],
-	likes: [
-		{
-			user: {
-				type: Schema.Types.ObjectId,
-				ref: 'users'
-			}
-		}
 	]
+	// likes: [
+	// 	{
+	// 		user: {
+	// 			type: Schema.Types.ObjectId,
+	// 			ref: 'users'
+	// 		}
+	// 	}
+	// ]
 });
 
 module.exports = mongoose.model('poems', PoemsSchema);
