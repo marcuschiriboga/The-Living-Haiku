@@ -1,9 +1,11 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css'
+import './HomeScreen.css'
 import { Divider, Container} from 'semantic-ui-react'
 import RandomHaikuGen from '../../Components/RandomHaikuGen'
 import LeftSideBar from '../../Components/LeftSideBar'
 import SignInBar from '../../Components/navigation/SignInBar'
+import NavBar from '../../Components/navigation/NavBar/NavBar';
 
 class HomeScreen extends React.Component {
     constructor(props){
@@ -16,10 +18,10 @@ class HomeScreen extends React.Component {
 
     render(){
         return (
-            <Container>
-                <SignInBar />
+            <Container >
+                <NavBar/>
                 <Divider />
-                <Container>
+                <Container id="homeContainer">
                     <LeftSideBar />
                     <RandomHaikuGen />
                 </Container>
