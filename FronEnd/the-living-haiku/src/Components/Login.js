@@ -16,7 +16,9 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <div id="firebaseui-auth-container">ooo</div>
+        <div id="firebaseui-auth-container">
+          <h1>Login</h1>
+        </div>
         <div id="sign-in-status"></div>
         <div id="sign-in"></div>
         <pre id="account-details"></pre>
@@ -29,9 +31,9 @@ class Login extends React.Component {
             <label>Password</label>
             <input placeholder="Password" name="password" type="text" />
           </Form.Field>
-          <Form.Field>
+          {/* <Form.Field>
             <Checkbox label="I agree to the Terms and Conditions" />
-          </Form.Field>
+          </Form.Field> */}
           <Button type="submit">Submit</Button>
         </Form>
       </>

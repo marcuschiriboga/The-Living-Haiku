@@ -55,30 +55,29 @@ export default function App() {
   // 		checkLoggedIn();
   // 	}, []);
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        {/* Put everything that will need state between UserContext.Provider  */}
-        <UserContext.Provider>
-          <MenuBar />
-          {/* <Switch>
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-          </Switch> */}
-        </UserContext.Provider>
-      </BrowserRouter>
-    </div>
-  );
+  // return (
+  //   <div className="App">
+  //     <BrowserRouter>
+  //       {/* Put everything that will need state between UserContext.Provider  */}
+  //       <UserContext.Provider>
+  //         <MenuBar />
+  //         {/* <Switch>
+  //           <Route exact path="/login" component={Login} />
+  //           <Route exact path="/register" component={Register} />
+  //         </Switch> */}
+  //       </UserContext.Provider>
+  //     </BrowserRouter>
+  //   </div>
+  // );
 
-  // 	return (
-  // 		<div className="App">
-  // 			<BrowserRouter>
-  // 				<MenuBar />
-  // 				<Register />
-  // 				<Switch>
-  // 					<Route exact path="/login" component={Login} />
-  // 				</Switch>
-  // 			</BrowserRouter>
-  // 		</div>
-  // 	);
+  	return (
+  		<div className="App">
+  			<BrowserRouter>
+  				<MenuBar />
+  				{/* <Switch>
+  					<Route exact path="/login" component={Login} />
+  				</Switch> */}
+  			</BrowserRouter>
+  		</div>
+  	);
 }
