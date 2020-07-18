@@ -18,7 +18,6 @@ class ProfileScreen extends React.Component {
     return (
       <Container>
         <NavBar />
-        <PoemEntry />
         <Divider />
         <div id="bg">
           <div class="scene">
@@ -30,50 +29,46 @@ class ProfileScreen extends React.Component {
         <Container id="profileContainer">
           <Container id="leftSideBar">
             <LeftSideBar />
+            <PoemEntry />
             <div class="moon" />
           </Container>
           <Container id="profileComponent">
             <ProfileComponent />
           </Container>
         </Container>
-        
       </Container>
     );
   }
 
-    // constructor(props){
-    //     super(props)
+  // constructor(props){
+  //     super(props)
 
-    //     this.state = {
+  //     this.state = {
 
-    //     }
-    // }
+  //     }
+  // }
 
-    // render(){
-    //     return (
-    //         <Container>
-    //             <NavBar/>
-                
-    //             <Divider />
-                
-    //             <Container id="profileContainer">
-    //             <Container id="leftSideBar">                        
-    //                 <LeftSideBar />
-    //                 <div class="moon" />
-    //                 </Container>
-    //             <Container id="profileComponent">
-    //                 <ProfileComponent /></Container>
-                
-                  
-    //             </Container>
+  // render(){
+  //     return (
+  //         <Container>
+  //             <NavBar/>
 
-                
+  //             <Divider />
 
-    //         </Container>
-            
-    //     )
-    // }
+  //             <Container id="profileContainer">
+  //             <Container id="leftSideBar">
+  //                 <LeftSideBar />
+  //                 <div class="moon" />
+  //                 </Container>
+  //             <Container id="profileComponent">
+  //                 <ProfileComponent /></Container>
 
+  //             </Container>
+
+  //         </Container>
+
+  //     )
+  // }
 }
 
 export default ProfileScreen;

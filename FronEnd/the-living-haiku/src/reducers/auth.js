@@ -23,15 +23,15 @@ export default function(state = initalUserState, action) {
 				...state,
 				isAuthenticated: true,
 				loading: false,
-				user: payload
+				user: action.payload
 			};
 		case REGISTER_SUCCESS:
 		case LOGIN_SUCCESS:
 			return {
 				...state,
-				payload,
 				isAuthenticated: true,
-				loading: false
+				loading: false,
+				user: action.payload
 			};
 		case AUTH_ERROR:
 		case LOGIN_FAIL:
