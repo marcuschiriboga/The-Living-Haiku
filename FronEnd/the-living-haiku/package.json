@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "faker": "^4.1.0",
     "firebase": "^7.16.0",
+    "firebaseui": "^4.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
