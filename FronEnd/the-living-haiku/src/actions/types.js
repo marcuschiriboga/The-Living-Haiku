@@ -24,3 +24,7 @@ export const GET_POEM = 'GET_POEM';
 export const POEM_ERROR = 'POEM_ERROR';
 export const DELETE_POEM = 'DELETE_POEM';
 export const ADD_POEM = 'ADD_POEM';
+
+//profile
+export const GET_PROFILE = 'GET_PROFILE';
+export const PROFILE_ERROR = 'PROFILE_ERROR';
