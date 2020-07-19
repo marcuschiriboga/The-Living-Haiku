@@ -4,6 +4,7 @@ import "./HomeScreen.css";
 import { Divider, Container } from "semantic-ui-react";
 import RandomHaikuGen from "../../Components/RandomHaikuGen";
 import LeftSideBar from "../../Components/LeftSideBar";
+import PoemList from "../../Components/ListPoems";
 import SignInBar from "../../Components/navigation/SignInBar";
 import NavBar from "../../Components/navigation/NavBar/NavBar";
 
@@ -19,10 +20,8 @@ class HomeScreen extends React.Component {
       <Container>
         <NavBar />
         <LeftSideBar />
-        <Divider />
-        <Container id="homeContainer">
-          <RandomHaikuGen />
-        </Container>
+        <RandomHaikuGen />
+        {/* <PoemList /> */}
       </Container>
     );
   }

@@ -70,14 +70,14 @@ export default function App() {
   //   </div>
   // );
 
-  	return (
-  		<div className="App">
-  			<BrowserRouter>
-  				<MenuBar />
-  				{/* <Switch>
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <MenuBar />
+        {/* <Switch>
   					<Route exact path="/login" component={Login} />
   				</Switch> */}
-  			</BrowserRouter>
-  		</div>
-  	);
+      </BrowserRouter>
+    </div>
+  );
 }

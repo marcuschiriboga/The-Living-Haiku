@@ -138,7 +138,7 @@ class NavBar extends React.Component {
                   </Grid.Column>
                 </Grid>
               </Button>
-              <Dropdown className="button icon" floating options={options} trigger={<React.Fragment />} />
+              <Dropdown className="button icon" floating options={options} trigger={<React.Fragment />}></Dropdown>
             </Button.Group>
           </div>
         </div>
