@@ -92,7 +92,7 @@ class Login extends React.Component {
 					</Message>
 				)}
 				<Message>
-					Need an account <Link to="/register"> Sign In</Link>
+					Need an account <Link to="/register"> Sign up here</Link>
 				</Message>
 			</Fragment>
 		);

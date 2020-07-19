@@ -5,7 +5,7 @@ import "./MenuBar.css";
 //import "./MenuBar.css"
 // import { Login } from "../../Components"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import PageNotFound from "../PageNotFound.js";
+import PageNotFoundScreen from "../../Screens/PageNotFoundScreen/PageNotFound.js";
 
 //import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen"
 import ProfileScreen from "../../Screens/ProfileScreen/ProfileScreen";
@@ -17,6 +17,7 @@ import Register from "../auth/Register";
 
 import RegisterScreen from "../../Screens/RegisterScreen/RegisterScreen";
 import NavBar from "./NavBar/NavBar";
+import dojo from "../../pictures/dojo.png"
 
 class MenuBar extends React.Component {
   constructor(props) {
@@ -28,8 +29,11 @@ class MenuBar extends React.Component {
     return (
       <Router>
         <div id="total_page_container">
+          <div className="dojo_container">
+            <img className="dojo" src={dojo} alt="Failed to load" />
+          </div>
           <div className="title_bar">
-            <h1>The Living Haiku</h1>
+            <h1 className="animate__fadeIn">The Living Haiku</h1>
             <h3>生きている俳句</h3>
           </div>
           {/* <div className="menu">
@@ -72,7 +76,7 @@ class MenuBar extends React.Component {
                     </List.Item>
                 </List> */}
 
-          <Switch> 
+          <Switch>
             <Route path="/Logout">
               <RegisterScreen />
             </Route>
@@ -89,6 +93,11 @@ class MenuBar extends React.Component {
               <SignUpScreen />
             </Route>
             <Route exact path="/register" component={RegisterScreen} />
+
+            {/* <Route path="*" component={PageNotFoundScreen}> */}
+
+            {/* </Route> */}
+            
           </Switch>
         </div>
       </Router>

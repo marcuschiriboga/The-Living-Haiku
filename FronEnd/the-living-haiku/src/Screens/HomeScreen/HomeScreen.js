@@ -7,7 +7,7 @@ import LeftSideBar from "../../Components/LeftSideBar";
 import PoemList from "../../Components/ListPoems";
 import SignInBar from "../../Components/navigation/SignInBar";
 import NavBar from "../../Components/navigation/NavBar/NavBar";
-
+import dojo from "../../pictures/dojo.png"
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -18,8 +18,8 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <Container>
+        
         <NavBar />
-
         <Divider />
         <Container id="Homepage">
           <LeftSideBar />
