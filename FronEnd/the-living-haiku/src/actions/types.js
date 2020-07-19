@@ -21,6 +21,10 @@ export const LOGOUT = 'LOGOUT';
 //Poems
 export const GET_POEMS = 'GET_POEMS';
 export const GET_POEM = 'GET_POEM';
-export const POEM_ERROR = 'POEM_ERROR';
+export const POEM_ERROR = 'POEM_ERROR'; //?? need to implement
 export const DELETE_POEM = 'DELETE_POEM';
-export const ADD_POEM = 'ADD_POEM';
+export const POST_POEM = 'POST_POEM';
+
+//profile
+export const GET_PROFILE = 'GET_PROFILE';
+export const PROFILE_ERROR = 'PROFILE_ERROR';

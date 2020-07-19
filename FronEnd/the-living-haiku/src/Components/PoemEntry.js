@@ -3,12 +3,17 @@ import "semantic-ui-css/semantic.min.css";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import firebase from "../firebase";
 
+//redux
+// import {useSelector, useDispatch} from 'react-redux'
+// import { postPoem } from '../actions/poems'
+
+
 class PoemEntry extends React.Component {
   constructor(props) {
     super(props);
-    // TODO: pull userId from Redux
-    // TODO: properly link up poem database -- done
-    // TODO: send the right data
+    // TODO: pull userId from context/redux
+    // TODO: properly link up poem database. 
+
 
     this.writeNewPost = (userId, title, stanza1, stanza2, stanza3) => {
       let poemData = {
@@ -24,7 +29,9 @@ class PoemEntry extends React.Component {
     };
   }
 
+  
   render() {
+    //const postPoemsData = useSelector(state => state.poemsReducer)
     return (
       <Form classname="haiku_form" onSubmit={this.writeNewPost}>
         <Form.Field>
@@ -44,6 +51,7 @@ class PoemEntry extends React.Component {
           <input placeholder="5 syllables" name="stanza3" type="text" />
         </Form.Field>
         <Button type="submit">Submit</Button>
+        {/* onSubmit={() => dispatch(postPoem(poemData))} */}
       </Form>
     );
   }

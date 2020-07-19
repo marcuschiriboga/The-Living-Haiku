@@ -4,6 +4,9 @@ import firebase from '../../firebase';
 
 import { Grid, Form, Segment, Button, Header, Message, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+//redux
+import {useDispatch} from 'react-redux'
+import { registerSuccess } from '../../actions/auth'
 
 class Register extends Component {
 	constructor(props) {
@@ -168,6 +171,7 @@ class Register extends Component {
 							>
 								Submit
 							</Button>
+							{/* onSubmit={() => dispatch(registerSuccuss(userData))} */}
 						</Segment>
 					</Form>
 					{errors.length > 0 && (

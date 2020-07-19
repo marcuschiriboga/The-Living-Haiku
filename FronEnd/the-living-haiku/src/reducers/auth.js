@@ -23,19 +23,39 @@ export default function(state = initalUserState, action) {
 				...state,
 				isAuthenticated: true,
 				loading: false,
-				user: payload
+				user: action.payload
 			};
 		case REGISTER_SUCCESS:
+			return Object.assign({}, state, {
+				isAuthenticated: false,
+				loading: false,
+				user: action.payload
+			})
 		case LOGIN_SUCCESS:
 			return {
 				...state,
-				payload,
 				isAuthenticated: true,
-				loading: false
+				loading: false,
+				user: action.payload
 			};
 		case AUTH_ERROR:
+			return Object.assign({}, state, {
+				isAuthenticated: false,
+				loading: false,
+				user: null
+			})
 		case LOGIN_FAIL:
+			return Object.assign({}, state, {
+				isAuthenticated: false,
+				loading: false,
+				user: null
+			})
 		case LOGOUT:
+			return Object.assign({}, state, {
+				isAuthenticated: false,
+				loading: false,
+				user: action.payload
+			})
 		case REGISTER_FAIL:
 			localStorage.removeItem('token');
 			return {

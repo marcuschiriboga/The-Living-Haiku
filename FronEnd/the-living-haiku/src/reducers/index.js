@@ -1,8 +1,22 @@
 import { combineReducers } from 'redux';
 import auth from './auth';
 import profile from './profile';
+import poemsReducer from './poems'
+import loginSuccess from './auth'
+import logoutUser from './auth'
+import registerSuccess from './auth'
+import getOnePoem from './poems'
+import getPoems from './poems'
 
-export default combineReducers({
+const allReducers =  combineReducers({
 	auth,
-	profile
+	profile,
+	poemsReducer,
+	loginSuccess,
+	logoutUser,
+	registerSuccess,
+	getOnePoem,
+	getPoems
 });
+
+export default allReducers;
