@@ -11,10 +11,10 @@ import PageNotFound from "../PageNotFound.js";
 import ProfileScreen from "../../Screens/ProfileScreen/ProfileScreen";
 import HomeScreen from "../../Screens/HomeScreen/HomeScreen";
 import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen";
+import AllPoemsScreen from "../../Screens/AllPoemsScreen/AllPoemsScreen";
 
 //TODO: TO SCREENS
 import Register from "../auth/Register";
-
 import RegisterScreen from "../../Screens/RegisterScreen/RegisterScreen";
 import NavBar from "./NavBar/NavBar";
 
@@ -72,7 +72,7 @@ class MenuBar extends React.Component {
                     </List.Item>
                 </List> */}
 
-          <Switch> 
+          <Switch>
             <Route path="/Logout">
               <RegisterScreen />
             </Route>
@@ -85,10 +85,13 @@ class MenuBar extends React.Component {
             <Route exact path="/">
               <HomeScreen />
             </Route>
-            <Route exact path="/Login">
+            <Route exact path="/login">
               <SignUpScreen />
             </Route>
             <Route exact path="/register" component={RegisterScreen} />
+            <Route exact path="/listpoems">
+              <AllPoemsScreen />
+            </Route>
           </Switch>
         </div>
       </Router>
