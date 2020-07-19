@@ -2,28 +2,30 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import firebase from "../firebase";
+
 //redux
-import {useSelector, useDispatch} from 'react-redux'
-import { postPoem } from '../actions/poems'
+// import {useSelector, useDispatch} from 'react-redux'
+// import { postPoem } from '../actions/poems'
+
+
 class PoemEntry extends React.Component {
   constructor(props) {
     super(props);
     // TODO: pull userId from context/redux
     // TODO: properly link up poem database. 
 
-    this.PostPoems = (userId, title, stanza1, stanza2, stanza3) => {
+
+    this.writeNewPost = (userId, title, stanza1, stanza2, stanza3) => {
       let poemData = {
-        userId: userId,
-        title: title,
-        stanza1: stanza1,
-        stanza2: stanza2,
-        stanza3: stanza3,
+        userId: "DcKwK9kCAnRJrpudqVJS1bj9szh2",
+        title: "title",
+        stanza1: "the days grow longer",
+        stanza2: "The months and years seem to shrink",
+        stanza3: "thats just what you need",
       };
-      var newPostKey = firebase.database().ref().child("poems").push().key;
-      var updates = {};
-      updates["/posts/" + newPostKey] = poemData;
-      updates["/user-posts/" + userId + "/" + newPostKey] = poemData;
-      firebase.database().ref("poems").update(updates);
+
+      console.log(poemData);
+      firebase.database().ref(`poems/${userId}`).update(poemData);
     };
   }
 
@@ -31,10 +33,10 @@ class PoemEntry extends React.Component {
   render() {
     //const postPoemsData = useSelector(state => state.poemsReducer)
     return (
-      <Form classname="haiku_form" onSubmit={this.PostPoems}>
+      <Form classname="haiku_form" onSubmit={this.writeNewPost}>
         <Form.Field>
           <label>Title</label>
-          <input placeholder="Title of your Haiku" name="name" type="text" />
+          <input placeholder="Title of your Haiku" name="title" type="text" />
         </Form.Field>
         <Form.Field>
           <label>Stanza 1</label>

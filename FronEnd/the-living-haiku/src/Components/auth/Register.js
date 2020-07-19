@@ -72,7 +72,8 @@ class Register extends Component {
 					createdUser.user
 						.updateProfile({
 							displayName: this.state.username,
-							photoURL: avatar
+							photoURL: avatar,
+							isAuth: true
 						})
 						.then(() => {
 							this.saveUser(createdUser).then(() => {
