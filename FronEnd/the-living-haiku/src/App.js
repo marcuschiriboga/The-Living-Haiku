@@ -70,6 +70,7 @@ export default function App() {
 	//   </div>
 	// );
 
+
 	return (
 		<div className="App">
 			<BrowserRouter>
@@ -80,4 +81,5 @@ export default function App() {
 			</BrowserRouter>
 		</div>
 	);
+
 }
