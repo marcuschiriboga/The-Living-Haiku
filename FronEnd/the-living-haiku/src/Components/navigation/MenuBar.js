@@ -29,9 +29,12 @@ class MenuBar extends React.Component {
       <Router>
         <div id="total_page_container">
           <div className="title_bar">
-            <h1>生きている俳句</h1>
-            <h3>The Living Haiku</h3>
+            <h1>The Living Haiku</h1>
+            <h3>生きている俳句</h3>
           </div>
+          {/* <div className="menu">
+            Menu
+          </div> */}
           {/* <Image id="image" src='https://react.semantic-ui.com/images/wireframe/image.png' size='tiny' /> */}
 
           {/* <List id="menu" animated verticalAlign='middle'>
@@ -69,7 +72,7 @@ class MenuBar extends React.Component {
                     </List.Item>
                 </List> */}
 
-          <Switch>
+          <Switch> 
             <Route path="/Logout">
               <RegisterScreen />
             </Route>

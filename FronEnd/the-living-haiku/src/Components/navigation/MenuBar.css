@@ -11,3 +11,9 @@
     
 }
 
+.menu {
+    position: relative;
+    margin: auto;
+    border: auto;
+    padding-right: -250px;
+}
