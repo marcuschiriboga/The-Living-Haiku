@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import 'semantic-ui-css/semantic.min.css';
 import { Button, Message, Form } from 'semantic-ui-react';
 import firebase from '../../firebase';
+import "./Login.css"
 
 class Login extends React.Component {
 	constructor(props) {
@@ -58,7 +59,7 @@ class Login extends React.Component {
 				<div id="sign-in-status" />
 				<div id="sign-in" />
 				<pre id="account-details" />
-				<Form action={this.loginFunction} method="POST" onSubmit={this.handleSubmit}>
+				<Form action={this.loginFunction} method="POST" onSubmit={this.handleSubmit} id="loginForm">
 					<Form.Field>
 						<label>Email</label>
 						<input

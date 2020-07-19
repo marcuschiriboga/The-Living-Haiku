@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import firebase from '../../firebase';
-
+import "./Register.css"
 import { Grid, Form, Segment, Button, Header, Message, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 //redux
@@ -110,9 +110,10 @@ class Register extends Component {
 	render() {
 		const { username, email, password, passwordConfirmation, errors, loading } = this.state;
 		return (
-			<Grid textAlign="center" verticalAlign="middle" className="app">
+			<div id="registerForm">
+			<Grid textAlign="center" verticalAlign="middle" className="app" >
 				<Grid.Column style={{ maxWidth: 450 }}>
-					<Form onSubmit={this.handleSubmit} size="large">
+					<Form onSubmit={this.handleSubmit} size="large" id="registerFromForm">
 						<Segment stacked>
 							<Form.Input
 								fluid
@@ -180,11 +181,13 @@ class Register extends Component {
 							{this.displayErrors(errors)}
 						</Message>
 					)}
-					<Message>
-						Already a user? <Link to="/login"> Sign In</Link>
-					</Message>
+					
 				</Grid.Column>
 			</Grid>
+			<Message>
+						Already a user? <Link to="/login"> Sign In</Link>
+			</Message>
+			</div>
 		);
 	}
 }
