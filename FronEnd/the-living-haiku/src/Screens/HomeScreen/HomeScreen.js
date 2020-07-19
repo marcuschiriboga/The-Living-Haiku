@@ -27,7 +27,6 @@ class HomeScreen extends React.Component {
             <RandomHaikuGen />
           </Container>
         </Container>
-
       </Container>
     );
   }
