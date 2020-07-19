@@ -5,7 +5,7 @@ import Login from '../../Components/auth/Login';
 import NavBar from '../../Components/navigation/NavBar/NavBar';
 import Register from '../../Components/auth/Register';
 import { register } from '../../serviceWorker';
-
+import './RegisterScreen.css'
 class RegisterScreen extends React.Component {
 	constructor(props) {
 		super(props);
@@ -15,11 +15,14 @@ class RegisterScreen extends React.Component {
 
 	render() {
 		return (
-			<Container>
+			<Container >
 				<NavBar />
 				<Divider />
-				<h2>Register New User</h2>
-				<Register />
+				<div id='Container'>
+					<h2>Register New User</h2>
+					<Register />
+				</div>
+				
 			</Container>
 		);
 	}
