@@ -6,3 +6,10 @@ export const postPoem = (poem) => {
         payload: poem
     }
 };
+
+export const deletePoem = (selectedPoem) => {
+    return {
+        type: actionTypes.DELETE_POEM,
+        payload: selectedPoem
+    }
+}
