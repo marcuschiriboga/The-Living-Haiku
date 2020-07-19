@@ -4,7 +4,7 @@
     background: rgba(168, 158, 158, 0.199);
     justify-content: space-around;
     flex-grow: 1;
-}
+} 
 
 #firebaseui-auth-container{
     margin-top: 10%;
@@ -38,7 +38,7 @@ h1{
     
 }
 /* background: #e4e4cd; */
-
+/*  */
 body {
      background:  linear-gradient(90deg, 
         #717ae1 40%,
@@ -50,7 +50,7 @@ body {
     z-index: 1; 
 }
 
-#hello1 {
+ Form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,8 +66,8 @@ body {
     z-index: 2;
     box-shadow: rgba(75, 75, 75, 0.575) 5px 5px 10px 1px;
     
-}
-
+} 
+/*
 .moon {
     width: 110px;
     height: 110px;
@@ -77,4 +77,4 @@ body {
     z-index: 2;
     background-color: #d6d9f6;
     box-shadow: 0 0 30px #d6d9f6, 0 0 20px #d6d9f6, 0 0 30px #d6d9f6, 0 0 40px #d6d9f6, 0 0 50px #75e2fa, 0 0 100px #d6d9f6;;
-}
+} */
