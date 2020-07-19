@@ -2,6 +2,7 @@ import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Container, Card, Icon, Dropdown, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+//import Profilecomponent from "../Components/Profilecomponent.css"
 const description = [
 	'Amy is a violinist with 2 years experience in the wedding industry.',
 	'She enjoys the outdoors and currently resides in upstate New York.'
@@ -35,7 +36,7 @@ const ProfileComponent = ({ currentUser }) => {
 
 	return (
 		<Container>
-			<Card>
+			<Card id="Pro">
 				<Card.Content header="Profile..." />
 				<Card.Content>
 					<Card>

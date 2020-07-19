@@ -2,6 +2,7 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import firebase from "../firebase";
+import PomEntry from "../Components/PoemEntry.css";
 
 //redux
 // import {useSelector, useDispatch} from 'react-redux'
@@ -45,7 +46,7 @@ class PoemEntry extends React.Component {
     //const postPoemsData = useSelector(state => state.poemsReducer)
     const { title, stanza1, stanza2, stanza3 } = this.state;
     return (
-      <Form classname="haiku_form" method="POST" onSubmit={this.handleSubmit}>
+      <Form classname="haiku_form" method="POST" onSubmit={this.handleSubmit} id="poem">
         <Form.Field>
           <label>Title</label>
           <input
