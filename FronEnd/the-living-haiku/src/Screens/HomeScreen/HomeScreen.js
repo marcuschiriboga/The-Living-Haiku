@@ -19,9 +19,15 @@ class HomeScreen extends React.Component {
     return (
       <Container>
         <NavBar />
-        <LeftSideBar />
-        <RandomHaikuGen />
-        {/* <PoemList /> */}
+
+        <Divider />
+        <Container id="Homepage">
+          <LeftSideBar />
+          <Container id="homeContainer">
+            <RandomHaikuGen />
+          </Container>
+        </Container>
+
       </Container>
     );
   }
