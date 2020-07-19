@@ -1,0 +1,12 @@
+#registerForm{
+    width: 100%;
+    
+    
+}
+
+#registerFromForm{
+    z-index: 2;
+    background: rgba(168, 158, 158, 0.199);
+    box-shadow: rgba(75, 75, 75, 0.575) 5px 5px 10px 1px;
+    margin-bottom: 10%;
+}
