@@ -20,6 +20,8 @@ import NavBar from "./NavBar/NavBar";
 import PostPoemsScreen from "../../Screens/PostPoemsScreen/PostPoemsScreen";
 import UserHaikus from "../../Screens/UserHaikus/UserHaikus";
 import GetPoemsByTags from "../../Screens/GetPoemsByTags/GetPoemsByTags";
+import dojo from "../../Picture/dojo.png"
+
 
 class MenuBar extends React.Component {
   constructor(props) {
@@ -30,9 +32,12 @@ class MenuBar extends React.Component {
   render() {
     return (
       <Router>
-        <div id="total_page_container">
+         <div id="total_page_container">
+          <div className="dojo_container">
+            <img className="dojo" src={dojo} alt="Failed to load" />
+          </div>
           <div className="title_bar">
-            <h1>The Living Haiku</h1>
+            <h1 className="animate__fadeIn">The Living Haiku</h1>
             <h3>生きている俳句</h3>
           </div>
           {/* <div className="menu">

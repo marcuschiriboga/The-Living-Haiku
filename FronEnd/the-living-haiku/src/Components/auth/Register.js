@@ -113,8 +113,8 @@ class Register extends Component {
 			<div id="registerForm">
 			<Grid textAlign="center" verticalAlign="middle" className="app" >
 				<Grid.Column style={{ maxWidth: 450 }}>
-					<Form onSubmit={this.handleSubmit} size="large" id="registerFromForm">
-						<Segment stacked>
+					<Form onSubmit={this.handleSubmit} size="large" >
+						<Segment stacked id="registerFromForm">
 							<Form.Input
 								fluid
 								name="username"
