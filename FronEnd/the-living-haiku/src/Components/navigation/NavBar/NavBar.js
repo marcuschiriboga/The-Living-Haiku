@@ -5,6 +5,7 @@ import "semantic-ui-css/semantic.min.css";
 import "./NavBar.css";
 import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import dojo from "../../../Picture/dojo.png";
 
 //need to figure this out 100%
 const source = _.times(5, () => ({
@@ -118,7 +119,7 @@ class NavBar extends React.Component {
     return (
       <Container>
         <div id="navContainer">
-          <Image id="image" src="https://react.semantic-ui.com/images/wireframe/image.png" />
+          <Image id="image" src={dojo} />
 
           <div id="dropDown">
             <Button.Group color="teal">
