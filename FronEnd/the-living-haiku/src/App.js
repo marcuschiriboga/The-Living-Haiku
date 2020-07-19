@@ -1,16 +1,11 @@
-// import React, { useState, useEffect } from "react";
-// import Axios from "axios";
-// import setAuthToken from "./utlis/setAuthToken";
-
+import React, { useEffect } from 'react';
+import { auth } from './firebase';
+import { setCurrentUser, clearCurrentUser } from './store/actions/auth';
+import { connect } from 'react-redux';
 // import Login from "./Components/Login";
 // import MenuBar from "./Components/navigation/MenuBar";
 // import Register from "./Components/auth/Register";
 // import PageNotFound from "./Components/PageNotFound";
-// //Context Api for state Start
-// import UserContext from "./context/UserContext";
-// import { BrowserRouter, Route, Switch } from "react-router-dom";
-//
-import React from 'react';
 
 import Login from './Components/auth/Login';
 import MenuBar from './Components/navigation/MenuBar';
@@ -21,40 +16,7 @@ import Register from './Components/auth/Register';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-//Context Api for state End
-
-export default function App() {
-	// 	const [ userData, setUserData ] = useState({
-	// 		token: undefined,
-	// 		user: undefined,
-	// 		isAuthenticated: false,
-	// 		loading: true
-	// 	});
-
-	// 	useEffect(() => {
-	// 		setAuthToken(localStorage.token);
-	// 		const checkLoggedIn = async () => {
-	// 			let token = localStorage.getItem('x-auth-token');
-	// 			if (token === null) {
-	// 				localStorage.setItem('x-auth-token', '');
-	// 				token = '';
-	// 			}
-	// 			if (token) {
-	// 				const userRes = await Axios.get('http://localhost:5000/api/auth', {
-	// 					header: { 'x-auth-token': token }
-	// 				});
-
-	// 				setUserData({
-	// 					token,
-	// 					user: userRes.data,
-	// 					isAuthenticated: true
-	// 				});
-
-	// 			}
-	// 		};
-	// 		checkLoggedIn();
-	// 	}, []);
-
+const App = ({ currentUser, setCurrentUser, clearCurrentUser }) => {
 	// return (
 	//   <div className="App">
 	//     <BrowserRouter>
@@ -70,6 +32,17 @@ export default function App() {
 	//   </div>
 	// );
 
+	useEffect(
+		() => {
+			let unsubscribeFromAuth = null;
+
+			unsubscribeFromAuth = auth.onAuthStateChanged(currentUser => {
+				currentUser ? setCurrentUser(currentUser) : clearCurrentUser(currentUser);
+			});
+			return () => unsubscribeFromAuth();
+		},
+		[ currentUser, setCurrentUser, clearCurrentUser ]
+	);
 
 	return (
 		<div className="App">
@@ -81,5 +54,14 @@ export default function App() {
 			</BrowserRouter>
 		</div>
 	);
+};
 
-}
+const mapStateToProps = state => ({
+	currentUser: state.auth.currentUser
+});
+const mapDispatchToProps = dispatch => ({
+	setCurrentUser: user => dispatch(setCurrentUser(user)),
+	clearCurrentUser: () => dispatch(clearCurrentUser())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
