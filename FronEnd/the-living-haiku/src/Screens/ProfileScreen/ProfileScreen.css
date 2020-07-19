@@ -6,6 +6,18 @@
     flex-grow: 1;
 }
 
+#firebaseui-auth-container{
+    margin-top: 10%;
+}
+
+h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
 .page_container{
     display: flex;
     flex-direction: row;
@@ -38,13 +50,18 @@ body {
     z-index: 1; 
 }
 
-Form {
+#hello1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /* border: solid 1px; */
     margin: auto;
+    
+    margin-bottom: 10%;
     background: rgba(168, 158, 158, 0.199);
     position: relative;
-    width: 500px;
-    height: 350px;
+    width: 300px;
+    height: 200px;
     padding: 3px;
     z-index: 2;
     box-shadow: rgba(75, 75, 75, 0.575) 5px 5px 10px 1px;

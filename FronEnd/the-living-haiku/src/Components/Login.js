@@ -2,6 +2,7 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 import firebase from "../firebase";
+import "./Login.css"
 //redux
 import {useSelector, useDispatch} from 'react-redux'
 import { loginSuccess } from '../actions/auth'
@@ -18,14 +19,14 @@ class Login extends React.Component {
 
   render() {
     return (
-      <>
+      <div>
         <div id="firebaseui-auth-container">
           <h1>Login</h1>
         </div>
         <div id="sign-in-status"></div>
         <div id="sign-in"></div>
         <pre id="account-details"></pre>
-        <Form action={this.loginFunction} method="POST">
+        <Form action={this.loginFunction} method="POST" id="hello1">
           <Form.Field>
             <label>Email</label>
             <input placeholder="Email" name="email" type="text" />
@@ -40,7 +41,7 @@ class Login extends React.Component {
           <Button type="submit">Submit</Button>
           {/* onSubmit = {() => dispatch(loginSuccess(userData))} */}
         </Form>
-      </>
+      </div>
     );
   }
 }
