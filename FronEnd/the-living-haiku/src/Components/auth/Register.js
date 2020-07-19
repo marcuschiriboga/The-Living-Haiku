@@ -5,8 +5,8 @@ import firebase from '../../firebase';
 import { Grid, Form, Segment, Button, Header, Message, Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 //redux
-import {useDispatch} from 'react-redux'
-import { registerSuccess } from '../../actions/auth'
+import { useDispatch } from 'react-redux';
+import { registerSuccess } from '../../store/actions/auth';
 
 class Register extends Component {
 	constructor(props) {

@@ -1,10 +1,11 @@
 import firebase from 'firebase/app';
-import 'firebase/firebase-auth';
-import 'firebase/firebase-database';
-import 'firebase/firebase-storage';
-import 'firebase/firebase-analytics';
+import 'firebase/auth';
+import 'firebase/database';
+import 'firebase/storage';
+import 'firebase/analytics';
+import 'firebase/firestore';
 
-var firebaseConfig = {
+const firebaseConfig = {
 	apiKey: 'AIzaSyAbciB5iYgfj4LXWJXoQUHEQL8gW6oM1ps',
 	authDomain: 'the-living-haiku.firebaseapp.com',
 	databaseURL: 'https://the-living-haiku.firebaseio.com',
@@ -16,6 +17,8 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+firebase.firestore();
 firebase.analytics();
 
+export const auth = firebase.auth();
 export default firebase;
