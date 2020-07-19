@@ -6,6 +6,9 @@ import "./NavBar.css";
 import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
+
+//just for now
+let user = 'databaseName'
 //need to figure this out 100%
 const source = _.times(5, () => ({
   title: faker.company.companyName(),
@@ -79,6 +82,24 @@ const options = [
     text: <Link to="/Register">Register</Link>,
     value: "register",
   },
+  {
+    key: "PostPoems",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/PostPoems">Post Poems</Link>,
+    value: "PostPoems",
+  },
+  {
+    key: "UserHaikus",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/UserHaikus">{user}'s Haikus</Link>,
+    value: "UserHaikus",
+  },
+  {
+    key: "GetPoemsByTags",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/GetPoemsByTags">Haiku's By #Tag</Link>,
+    value: "GetPoemsByTags",
+  }
 ];
 
 class NavBar extends React.Component {
