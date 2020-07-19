@@ -17,7 +17,11 @@ import AllPoemsScreen from "../../Screens/AllPoemsScreen/AllPoemsScreen";
 import Register from "../auth/Register";
 import RegisterScreen from "../../Screens/RegisterScreen/RegisterScreen";
 import NavBar from "./NavBar/NavBar";
+import PostPoemsScreen from "../../Screens/PostPoemsScreen/PostPoemsScreen";
+import UserHaikus from "../../Screens/UserHaikus/UserHaikus";
+import GetPoemsByTags from "../../Screens/GetPoemsByTags/GetPoemsByTags";
 import dojo from "../../Picture/dojo.png"
+
 
 class MenuBar extends React.Component {
   constructor(props) {
@@ -93,9 +97,9 @@ class MenuBar extends React.Component {
               <SignUpScreen />
             </Route>
             <Route exact path="/register" component={RegisterScreen} />
-            <Route exact path="/listpoems">
-              <AllPoemsScreen />
-            </Route>
+            <Route exact path="/PostPoems" component={PostPoemsScreen} />
+            <Route exact path="/UserHaikus" component={UserHaikus} />
+            <Route exact path="/GetPoemsByTags" component={GetPoemsByTags} />
           </Switch>
         </div>
       </Router>
