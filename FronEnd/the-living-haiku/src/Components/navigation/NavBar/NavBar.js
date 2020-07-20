@@ -30,10 +30,10 @@ import bamboo from "../../../Picture/Bamboo.png";
 // >>>>>>> master
 //need to figure this out 100%
 const source = _.times(5, () => ({
-	title: faker.company.companyName(),
-	description: faker.company.catchPhrase(),
-	image: faker.internet.avatar(),
-	price: faker.finance.amount(0, 100, 2, '$')
+  title: faker.company.companyName(),
+  description: faker.company.catchPhrase(),
+  image: faker.internet.avatar(),
+  price: faker.finance.amount(0, 100, 2, "$"),
 }));
 
 // const friendOptions = [
@@ -124,44 +124,49 @@ const options = [
     value: "UserHaikus",
   },
   {
+    key: "AllHaikus",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/allHaikus">All Haikus</Link>,
+    value: "AllHaikus",
+  },
+  {
     key: "GetPoemsByTags",
     icon: <i className="sign out alternate icon"></i>,
     text: <Link to="/GetPoemsByTags">Haiku's By #Tag</Link>,
     value: "GetPoemsByTags",
-  }
-
+  },
 ];
 
 class NavBar extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			//for the search bar
-			isLoading: false,
-			results: [],
-			value: ''
-		};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      //for the search bar
+      isLoading: false,
+      results: [],
+      value: "",
+    };
+  }
 
-	// Need to figure this out
-	//+++++++
-	handleResultSelect = (e, { result }) => this.setState({ value: result.title });
+  // Need to figure this out
+  //+++++++
+  handleResultSelect = (e, { result }) => this.setState({ value: result.title });
 
-	handleSearchChange = (e, { value }) => {
-		this.setState({ isLoading: true, value });
+  handleSearchChange = (e, { value }) => {
+    this.setState({ isLoading: true, value });
 
-		setTimeout(() => {
-			if (this.state.value.length < 1) return this.setState(this.state);
+    setTimeout(() => {
+      if (this.state.value.length < 1) return this.setState(this.state);
 
-			const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
-			const isMatch = result => re.test(result.title);
+      const re = new RegExp(_.escapeRegExp(this.state.value), "i");
+      const isMatch = (result) => re.test(result.title);
 
-			this.setState({
-				isLoading: false,
-				results: _.filter(source, isMatch)
-			});
-		}, 300);
-	};
+      this.setState({
+        isLoading: false,
+        results: _.filter(source, isMatch),
+      });
+    }, 300);
+  };
 
   render() {
     const { isLoading, value, results } = this.state;

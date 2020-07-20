@@ -1,45 +1,39 @@
 #total_page_container {
-    display: flex;
-    flex-direction: column;
-    margin: 30px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0px 0px 0px;
 }
 
-
-
-
-.title_bar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -80px;
+.title_bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -80px;
 }
 
-.animate__fadeIn{
-    /* @import url(‘https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap’); */
-    color:rgba(255, 255, 255, 0.911);
-    text-shadow: 4px 4px 9px rgba(39, 28, 28, 0.932);
-    margin-bottom: -5px;
-    font-size: 50px;
-    animation: fadeIn;
-    animation-duration: 4s;
-    font-family: ‘Nanum Brush Script’;
+.animate__fadeIn {
+  /* @import url(‘https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap’); */
+  color: rgba(255, 255, 255, 0.911);
+  text-shadow: 4px 4px 9px rgba(39, 28, 28, 0.932);
+  margin-bottom: -5px;
+  font-size: 50px;
+  animation: fadeIn;
+  animation-duration: 4s;
+  font-family: ‘Nanum Brush Script’;
 }
-h3{
-    color:rgb(170, 46, 46);
-    text-shadow: 2px 2px 3px rgba(27, 27, 27, 0.774);
+h3 {
+  color: rgb(170, 46, 46);
+  text-shadow: 2px 2px 3px rgba(27, 27, 27, 0.774);
 }
-.dojo_container{
-    display: flex;
-    flex-direction: column;
-    margin: 9px auto;
-    width: 170px;
+.dojo_container {
+  display: flex;
+  flex-direction: column;
+  margin: 9px auto;
+  width: 170px;
 }
 .menu {
-    position: relative;
-    margin: auto;
-    border: auto;
-    padding-right: -250px;
+  position: relative;
+  margin: auto;
+  border: auto;
+  padding-right: -250px;
 }
-
-
-

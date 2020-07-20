@@ -1,8 +1,9 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Card, Button, } from "semantic-ui-react";
+import { Card, Icon, Button, CardContent } from "semantic-ui-react";
 import firebase from "../firebase";
-class ListAllPoems extends React.Component {
+import { connect } from "react-redux";
+class ListYourPoems extends React.Component {
   constructor(props) {
     super(props);
 
@@ -13,7 +14,7 @@ class ListAllPoems extends React.Component {
     this.getData = () => {
       firebase
         .database()
-        .ref(`/allpoems/`)
+        .ref(`/user/${this.props.currentUser.uid}/poems`)
         // .ref(`allpoems/`)
         .once("value")
         .then((snapshot) => {
@@ -86,4 +87,8 @@ class ListAllPoems extends React.Component {
   }
 }
 
-export default ListAllPoems;
+const mapStateToProps = (state) => ({
+  currentUser: state.auth.currentUser,
+});
+
+export default connect(mapStateToProps)(ListYourPoems);
