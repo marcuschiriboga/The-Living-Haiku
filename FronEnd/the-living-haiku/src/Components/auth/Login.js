@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import 'semantic-ui-css/semantic.min.css';
 import { Button, Message, Form } from 'semantic-ui-react';
 import firebase from '../../firebase';
-import "./Login.css"
+import './Login.css';
 
 class Login extends React.Component {
 	constructor(props) {
@@ -50,6 +51,9 @@ class Login extends React.Component {
 	};
 
 	render() {
+		if (this.props.isAuthenticated) {
+			return <Redirect to="/Profile" />;
+		}
 		const { email, password, errors, loading } = this.state;
 		return (
 			<Fragment>
@@ -82,7 +86,7 @@ class Login extends React.Component {
 							value={password}
 						/>
 					</Form.Field>
-					<Button disabled={loading} className={loading ? 'loading' : ''} type="submit">
+					<Button disabled={this.props.loading} className={this.props.loading ? 'loading' : ''} type="submit">
 						Submit
 					</Button>
 				</Form>
@@ -99,5 +103,8 @@ class Login extends React.Component {
 		);
 	}
 }
-
-export default Login;
+const mapStateToProps = state => ({
+	isAuthenticated: state.auth.isAuthenticated,
+	loading: state.auth.isAuthenticated
+});
+export default connect(mapStateToProps)(Login);
