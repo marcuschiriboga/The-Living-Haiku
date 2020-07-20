@@ -88,13 +88,13 @@ const options = [
 	// 	text: <Link to="/Register">Register</Link>,
 	// 	value: 'register'
 	// },
+	
 	{
 		key: 'Register',
 		icon: <i className="sign out alternate icon" />,
 		text: <Link onClick={() => auth.signOut()}>Signout</Link>,
 		value: 'signout'
 	},
-
   {
     key: "Home",
     icon: <i className="home icon"></i>,

@@ -62,7 +62,6 @@ const ProfileComponent = ({ currentUser }) => {
 							</a>
 						</Card.Content>
 					</Card>
-					<Dropdown placeholder="Haiku(s)" fluid multiple selection options={options} />
 				</Card.Content>
 				<Card.Content extra>
 					<Icon name="calendar check" />
