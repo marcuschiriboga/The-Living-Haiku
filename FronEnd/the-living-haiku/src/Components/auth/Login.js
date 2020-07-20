@@ -22,9 +22,9 @@ class Login extends React.Component {
 	isformValid = ({ email, password }) => email && password;
 	displayErrors = ({ errors }) => errors.map(error => <p key={uuidv4()}>{error.message}</p>);
 	handleChange = evt => this.setState({ [evt.target.name]: evt.target.value });
-	handleInputError = (errors, inputName) => {
-		return errors.some(error => error.message.toLowerCase().includes(inputName)) ? 'error' : '';
-	};
+	// handleInputError = (errors, inputName) => {
+	// 	return errors.some(error => error.message.toLowerCase().includes(inputName)) ? 'error' : '';
+	// };
 
 	handleSubmit = evt => {
 		evt.preventDefault();
@@ -70,7 +70,7 @@ class Login extends React.Component {
 							placeholder="Email"
 							name="email"
 							type="text"
-							className={this.handleInputError(errors, 'email')}
+							// className={this.handleInputError(errors, 'email')}
 							onChange={this.handleChange}
 							value={email}
 						/>
@@ -81,7 +81,7 @@ class Login extends React.Component {
 							placeholder="Password"
 							name="password"
 							type="password"
-							className={this.handleInputError(errors, 'password')}
+							// className={this.handleInputError(errors, 'password')}
 							onChange={this.handleChange}
 							value={password}
 						/>
