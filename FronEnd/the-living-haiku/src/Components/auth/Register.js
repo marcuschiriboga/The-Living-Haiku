@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import firebase from '../../firebase';
-import "./Register.css"
+import './Register.css';
 import { Grid, Form, Segment, Button, Header, Message, Icon } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-//redux
-import { useDispatch } from 'react-redux';
-import { registerSuccess } from '../../store/actions/auth';
+import { Link, Redirect } from 'react-router-dom';
 
 class Register extends Component {
 	constructor(props) {
@@ -108,9 +105,29 @@ class Register extends Component {
 	};
 
 	render() {
+		if (this.props.isAuthenticated) {
+			return <Redirect to="/Profile" />;
+		}
 		const { username, email, password, passwordConfirmation, errors, loading } = this.state;
 		return (
 			<div id="registerForm">
+{/* <<<<<<< HEAD
+				<Grid textAlign="center" verticalAlign="middle" className="app">
+					<Grid.Column style={{ maxWidth: 450 }}>
+						<Form onSubmit={this.handleSubmit} size="large" id="registerFromForm">
+							<Segment stacked>
+								<Form.Input
+									fluid
+									name="username"
+									icon="user"
+									iconPosition="left"
+									placeholder="Username"
+									onChange={this.handleChange}
+									value={username}
+									className={this.handleInputError(errors, 'username')}
+									type="text"
+								/>
+======= */}
 			<Grid textAlign="center" verticalAlign="middle" className="app" >
 				<Grid.Column style={{ maxWidth: 450 }}>
 					<Form onSubmit={this.handleSubmit} size="large" >
@@ -126,69 +143,74 @@ class Register extends Component {
 								className={this.handleInputError(errors, 'username')}
 								type="text"
 							/>
+{/* >>>>>>> master */}
 
-							<Form.Input
-								fluid
-								name="email"
-								icon="mail"
-								iconPosition="left"
-								placeholder="Email Address"
-								onChange={this.handleChange}
-								value={email}
-								className={this.handleInputError(errors, 'email')}
-								type="email"
-							/>
+								<Form.Input
+									fluid
+									name="email"
+									icon="mail"
+									iconPosition="left"
+									placeholder="Email Address"
+									onChange={this.handleChange}
+									value={email}
+									className={this.handleInputError(errors, 'email')}
+									type="email"
+								/>
 
-							<Form.Input
-								fluid
-								name="password"
-								icon="lock"
-								iconPosition="left"
-								placeholder="Password"
-								onChange={this.handleChange}
-								value={password}
-								className={this.handleInputError(errors, 'password')}
-								type="password"
-							/>
+								<Form.Input
+									fluid
+									name="password"
+									icon="lock"
+									iconPosition="left"
+									placeholder="Password"
+									onChange={this.handleChange}
+									value={password}
+									className={this.handleInputError(errors, 'password')}
+									type="password"
+								/>
 
-							<Form.Input
-								fluid
-								name="passwordConfirmation"
-								icon="repeat"
-								iconPosition="left"
-								placeholder="Password Confirmation"
-								onChange={this.handleChange}
-								value={passwordConfirmation}
-								className={this.handleInputError(errors, 'password')}
-								type="password"
-							/>
+								<Form.Input
+									fluid
+									name="passwordConfirmation"
+									icon="repeat"
+									iconPosition="left"
+									placeholder="Password Confirmation"
+									onChange={this.handleChange}
+									value={passwordConfirmation}
+									className={this.handleInputError(errors, 'password')}
+									type="password"
+								/>
 
-							<Button
-								disabled={loading}
-								className={loading ? 'loading' : ''}
-								color="blue"
-								fluid
-								size="large"
-							>
-								Submit
-							</Button>
-							{/* onSubmit={() => dispatch(registerSuccuss(userData))} */}
-						</Segment>
-					</Form>
-					{errors.length > 0 && (
-						<Message error>
-							<h3>Error</h3>
-							{this.displayErrors(errors)}
-						</Message>
-					)}
-					
-				</Grid.Column>
-			</Grid>
-			<Message>
-						Already a user? <Link to="/login"> Sign In</Link>
-			</Message>
+								<Button
+									disabled={loading}
+									className={loading ? 'loading' : ''}
+									color="blue"
+									fluid
+									size="large"
+								>
+									Submit
+								</Button>
+								{/* onSubmit={() => dispatch(registerSuccuss(userData))} */}
+							</Segment>
+						</Form>
+						{errors.length > 0 && (
+							<Message error>
+								<h3>Error</h3>
+								{this.displayErrors(errors)}
+							</Message>
+						)}
+					</Grid.Column>
+				</Grid>
+				<Message>
+					Already a user? <Link to="/login"> Sign In</Link>
+				</Message>
 			</div>
 		);
 	}
 }
-export default Register;
+
+const mapStateToProps = state => ({
+	isAuthenticated: state.auth.isAuthenticated,
+	loading: state.auth.isAuthenticated
+});
+export default connect(mapStateToProps)(Register);
