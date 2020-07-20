@@ -1,5 +1,5 @@
 
-This Project is a joint effort of Marcus Chiriboga, Wesely Salesberry, Timothy Reynoso, Darian Martinez, and Greg Hodges.
+This Project is a joint effort of Marcus Chiriboga, Wesley Salesberry, Timothy Reynoso, Darian Martinez, and Greg Hodges.
 
 The Brain Child of Marcus Chiriboga, The living Haiku, is a simple app that allows one to view randomly generated haiku's from a list of users haikus without needing to login. Once an account has been created the user is also able to input their own haiku, and update a profile to see the list of haiku's they have authored, upload a profile picture, and display a little info about themselves. This app is meant to bring joy to the lives of those who are in need of a smile. :)
 
@@ -18,7 +18,7 @@ Though titles were given, each one of us contributed to the organization, develo
 Our group consited of 
  Vincent St.Louis  - Investor
  Marcus Chiriboga - Project Owner
- Wesely Salesberry - Backend Developer
+ Wesley Salesberry - Backend Developer
  Timothy Reynoso - Frontend Developer
  Darian Martinez - Styling Coordinator
  Greg Hodges - Scrum Master and Git Repo

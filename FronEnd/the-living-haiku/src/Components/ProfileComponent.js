@@ -2,6 +2,7 @@ import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Container, Card, Icon,  Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 //import Profilecomponent from "../Components/Profilecomponent.css"
 // const description = [
 // 	'Amy is a violinist with 2 years experience in the wedding industry.',
@@ -29,64 +30,68 @@ import { connect } from 'react-redux';
 // 	{ key: 'ux', text: 'User Experience', value: 'ux' }
 // ];
 
-const ProfileComponent = ({ currentUser }) => {
-	// constructor(props) {
-	//   super(props);
-	// }
+// const convertTime = time => {
+// 	let date = new Date(time);
+// 	let options = {
+// 		weekday: 'short',
+// 		year: 'numeric',
+// 		month: '2-digit',
+// 		day: 'numeric',
+// 		hour: 'numeric',
+// 		minute: 'numeric'
+// 	};
 
-	return (
-    <Container>
-      <Card id="Pro">
-        <Card.Content header="Profile..." />
-        <Card.Content>
-          <Card>
-            <Image
-              src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
-              wrapped
-              ui={false}
-            />
-            <Card.Content>
-              <Card.Header>
-                {currentUser && currentUser ? (
-                  <p>{currentUser.displayName} </p>
-                ) : (
-                  <p>Login in</p>
-                )}
-              </Card.Header>
-              <Card.Meta>
-                <span className="date">Joined in 2015</span>
-              </Card.Meta>
-              <Card.Description>
-                {currentUser && currentUser ? (
-                  <p>
-                    {currentUser.displayName} is a musician living in Nashville.
-                  </p>
-                ) : (
-                  <p>Login in</p>
-                )}
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              {/* <a>
-                <Icon name="chart line" /> {`Number of Poems: `}
-              </a> */}
-              <div>
-                <Icon name="chart line" /> {`Number of Poems: `}
-              </div>
-            </Card.Content>
-          </Card>
-        </Card.Content>
-        <Card.Content extra>
-          <Icon name="calendar check" />
-          {`Date Joined: [already dynamic]`}
-        </Card.Content>
-      </Card>
-    </Container>
-  );
+// 	const startDate = date.toLocaleDateString('en', options);
+
+// 	return startDate;
+// };
+
+const ProfileComponent = ({ currentUser, isAuthenticated }) => {
+	return isAuthenticated ? (
+		<Container>
+			<Card id="Pro">
+				<Card.Content header={`${currentUser.displayName}`} />
+				<Card.Content>
+					<Card>
+						<Image src={`${currentUser.photoURL}`} wrapped ui={false} />
+						<Card.Content>
+							<Card.Header>
+								{currentUser && currentUser ? <p>{currentUser.email} </p> : <p>Login in</p>}
+							</Card.Header>
+							<Card.Meta>
+								<p className="date">Created @ {`${currentUser.createdAt}`}</p>
+								<p className="date">Last Login @ {`${currentUser.lastLoginAt}`}</p>
+							</Card.Meta>
+							<Card.Description>
+								{currentUser && currentUser ? (
+									<p>{currentUser.displayName} is a musician living in Nashville.</p>
+								) : (
+									<p>Login in</p>
+								)}
+							</Card.Description>
+						</Card.Content>
+						<Card.Content extra>
+							<div>
+								<Icon name="chart line" /> {`Number of Poems: `}
+							</div>
+						</Card.Content>
+					</Card>
+					
+				</Card.Content>
+				<Card.Content extra>
+					<Icon name="calendar check" />
+					{`Date Joined: [already dynamic]`}
+				</Card.Content>
+			</Card>
+		</Container>
+	) : (
+		<Redirect to="/Login" />
+	);
 };
 
 const mapStateToProps = state => ({
-	currentUser: state.auth.currentUser
+	currentUser: state.auth.currentUser,
+	isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps)(ProfileComponent);
