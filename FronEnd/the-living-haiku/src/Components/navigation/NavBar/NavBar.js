@@ -1,13 +1,6 @@
-// <<<<<<< HEAD
-// import React from 'react';
+
 import { auth } from '../../../firebase';
-// import _ from 'lodash';
-// import faker from 'faker';
-// import 'semantic-ui-css/semantic.min.css';
-// import './NavBar.css';
-// import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from 'semantic-ui-react';
-// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-// =======
+
 import React from "react";
 import _ from "lodash";
 import faker from "faker";
@@ -16,7 +9,7 @@ import "./NavBar.css";
 import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import dojo from "../../../Picture/dojo.png";
-// >>>>>>> master
+
 
 
 //just for now
@@ -71,30 +64,30 @@ const friendOptions = [
 //button/dropdown
 const options = [
 
-	{
-		key: 'Home',
-		icon: <i className="home icon" />,
-		text: <Link to="/">Home</Link>,
-		value: 'Home'
-	},
-	{
-		key: 'Profile',
-		icon: <i className="user icon" />,
-		text: <Link to="/Profile">Profile</Link>,
-		value: 'Profile'
-	},
-	{
-		key: 'Logout',
-		icon: <i className="sign out alternate icon" />,
-		text: <Link to="/Login">Login</Link>,
-		value: 'Logout'
-	},
-	{
-		key: 'Register',
-		icon: <i className="sign out alternate icon" />,
-		text: <Link to="/Register">Register</Link>,
-		value: 'register'
-	},
+	// {
+	// 	key: 'Home',
+	// 	icon: <i className="home icon" />,
+	// 	text: <Link to="/">Home</Link>,
+	// 	value: 'Home'
+	// },
+	// {
+	// 	key: 'Profile',
+	// 	icon: <i className="user icon" />,
+	// 	text: <Link to="/Profile">Profile</Link>,
+	// 	value: 'Profile'
+	// },
+	// {
+	// 	key: 'Logout',
+	// 	icon: <i className="sign out alternate icon" />,
+	// 	text: <Link to="/Login">Login</Link>,
+	// 	value: 'Logout'
+	// },
+	// {
+	// 	key: 'Register',
+	// 	icon: <i className="sign out alternate icon" />,
+	// 	text: <Link to="/Register">Register</Link>,
+	// 	value: 'register'
+	// },
 	{
 		key: 'Register',
 		icon: <i className="sign out alternate icon" />,
