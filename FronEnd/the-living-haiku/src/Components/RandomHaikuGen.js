@@ -4,7 +4,7 @@ import "./RandomHaikuGen.css"
 import { Card, Icon, Button } from "semantic-ui-react";
 import { poemlist } from "../PoemList";
 import firebase from "../firebase";
-import PoemEntry from "../Components/PoemEntry.css";
+// import PoemEntry from "../Components/PoemEntry.css";
 class RandomHaikuGen extends React.Component {
   constructor(props) {
     super(props);

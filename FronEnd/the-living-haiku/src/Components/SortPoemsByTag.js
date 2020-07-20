@@ -1,11 +1,8 @@
-import React from "react"
+import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import "./SortPoemsByTag.css"
 import { Divider, Card, Icon, Button, Dropdown, Image } from "semantic-ui-react";
 import firebase from "../firebase";
-
-
-
 
 const options = [
   { key: "Pets", text: "Pets", value: "pets" },
@@ -24,46 +21,45 @@ const options = [
   { key: "Sadness", text: "Sadness", value: "sadness" },
   { key: "Educational", text: "Educational", value: "Educational" },
 ];
-    
-class SortPoemsByTag extends React.Component {
 
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-          poemsList: {},
-          poemsArray: [],
-        };
-            this.getData = () => {
-            let userId = "DcKwK9kCAnRJrpudqVJS1bj9szh2";
-            firebase
-                .database()
-                .ref(`/users/${userId}/poems/`)
-                // .ref(`allpoems/`)
-                .once("value")
-                .then((snapshot) => {
-                var poems = snapshot.val();
-   
-    
-            this.setState({
+class SortPoemsByTag extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      poemsList: {},
+      poemsArray: [],
+    };
+    this.getData = () => {
+      let userId = "DcKwK9kCAnRJrpudqVJS1bj9szh2";
+      firebase
+        .database()
+        .ref(`/users/${userId}/poems/`)
+        // .ref(`allpoems/`)
+        .once("value")
+        .then((snapshot) => {
+          var poems = snapshot.val();
+
+          this.setState({
             poemsList: poems,
-            });
-            let poemsArray = [];
-            for (let keys in this.state.poemsList) {
+          });
+          let poemsArray = [];
+          for (let keys in this.state.poemsList) {
             let newPoem = [
-                this.state.poemsList[keys].title,
-                this.state.poemsList[keys].stanza1,
-                this.state.poemsList[keys].stanza2,
-                this.state.poemsList[keys].stanza3,
-                this.state.poemsList[keys].tag
+              this.state.poemsList[keys].title,
+              this.state.poemsList[keys].stanza1,
+              this.state.poemsList[keys].stanza2,
+              this.state.poemsList[keys].stanza3,
+              this.state.poemsList[keys].tag,
             ];
-            if(this.state.poemsList[keys].tag === options.value){
-                console.log(keys);
-                poemsArray.push(newPoem);}
+            if (this.state.poemsList[keys].tag === options.value) {
+              console.log(keys);
+              poemsArray.push(newPoem);
             }
-            this.setState({
+          }
+          this.setState({
             poemsArray: poemsArray,
-            });
+          });
         });
         };
       }

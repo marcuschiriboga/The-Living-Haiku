@@ -21,7 +21,9 @@ class GetPoemsByTags extends React.Component {
         <Divider />
         <Container id="haikiCard">
             <SortPoemsByTag />
-        </Container>
+            
+         </Container>
+        
       </Container>
     );
   }

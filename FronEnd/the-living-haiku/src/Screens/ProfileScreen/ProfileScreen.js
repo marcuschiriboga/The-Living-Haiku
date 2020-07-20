@@ -2,8 +2,8 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import "./ProfileScreen.css";
 import { Divider, Container } from "semantic-ui-react";
-import PoemEntry from "../../Components/PoemEntry";
-import LeftSideBar from "../../Components/LeftSideBar";
+// import PoemEntry from "../../Components/PoemEntry";
+// import LeftSideBar from "../../Components/LeftSideBar";
 import NavBar from "../../Components/navigation/NavBar/NavBar";
 import ProfileComponent from "../../Components/ProfileComponent";
 
@@ -20,9 +20,9 @@ class ProfileScreen extends React.Component {
         <NavBar />
         <Divider />
         <div id="bg">
-          <div class="scene">
-            <div class="background">
-              <div class="sun" />
+          <div className="scene">
+            <div className="background">
+              <div className="sun" />
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ class ProfileScreen extends React.Component {
           {/* <Container id="leftSideBar"> */}
             {/* <LeftSideBar /> */}
             {/* <PoemEntry /> */}
-            <div class="moon" />
+            <div className="moon" />
           {/* </Container> */}
           <Container id="profileComponent">
             <ProfileComponent />

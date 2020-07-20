@@ -2,7 +2,7 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import "./UserHaikus.css";
 import { Divider, Container } from "semantic-ui-react";
-import ListPoems from "../../Components/ListPoems"
+import ListYourPoems from "../../Components/ListYourPoems";
 import NavBar from "../../Components/navigation/NavBar/NavBar";
 
 class UserHaikus extends React.Component {
@@ -19,7 +19,7 @@ class UserHaikus extends React.Component {
 
         <Divider />
         <Container id="postPageOne">
-            <ListPoems />
+            <ListYourPoems />
         </Container>
       </Container>
     );
