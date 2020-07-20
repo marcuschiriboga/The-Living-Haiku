@@ -2,6 +2,7 @@ import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
 import { Container, Card, Icon, Dropdown, Image } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 //import Profilecomponent from "../Components/Profilecomponent.css"
 const description = [
 	'Amy is a violinist with 2 years experience in the wedding industry.',
@@ -29,24 +30,37 @@ const options = [
 	{ key: 'ux', text: 'User Experience', value: 'ux' }
 ];
 
-const ProfileComponent = ({ currentUser }) => {
-	// constructor(props) {
-	//   super(props);
-	// }
+// const convertTime = time => {
+// 	let date = new Date(time);
+// 	let options = {
+// 		weekday: 'short',
+// 		year: 'numeric',
+// 		month: '2-digit',
+// 		day: 'numeric',
+// 		hour: 'numeric',
+// 		minute: 'numeric'
+// 	};
 
-	return (
+// 	const startDate = date.toLocaleDateString('en', options);
+
+// 	return startDate;
+// };
+
+const ProfileComponent = ({ currentUser, isAuthenticated }) => {
+	return isAuthenticated ? (
 		<Container>
 			<Card id="Pro">
-				<Card.Content header="Profile..." />
+				<Card.Content header={`${currentUser.displayName}`} />
 				<Card.Content>
 					<Card>
-						<Image src="https://react.semantic-ui.com/images/avatar/large/matthew.png" wrapped ui={false} />
+						<Image src={`${currentUser.photoURL}`} wrapped ui={false} />
 						<Card.Content>
 							<Card.Header>
-								{currentUser && currentUser ? <p>{currentUser.displayName} </p> : <p>Login in</p>}
+								{currentUser && currentUser ? <p>{currentUser.email} </p> : <p>Login in</p>}
 							</Card.Header>
 							<Card.Meta>
-								<span className="date">Joined in 2015</span>
+								<p className="date">Created @ {`${currentUser.createdAt}`}</p>
+								<p className="date">Last Login @ {`${currentUser.lastLoginAt}`}</p>
 							</Card.Meta>
 							<Card.Description>
 								{currentUser && currentUser ? (
@@ -70,11 +84,14 @@ const ProfileComponent = ({ currentUser }) => {
 				</Card.Content>
 			</Card>
 		</Container>
+	) : (
+		<Redirect to="/Login" />
 	);
 };
 
 const mapStateToProps = state => ({
-	currentUser: state.auth.currentUser
+	currentUser: state.auth.currentUser,
+	isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps)(ProfileComponent);
