@@ -18,7 +18,7 @@ class PostPoemsScreen extends React.Component {
         <NavBar />
 
         <Divider />
-        <Container id="postPage">
+        <Container id="">
             <PoemEntry />
         </Container>
       </Container>

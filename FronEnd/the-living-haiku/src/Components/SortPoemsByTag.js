@@ -1,6 +1,7 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Divider, Card, Button, Dropdown } from "semantic-ui-react";
+import "./SortPoemsByTag.css"
+import { Divider, Card, Icon, Button, Dropdown, Image } from "semantic-ui-react";
 import firebase from "../firebase";
 
 const options = [
@@ -60,55 +61,57 @@ class SortPoemsByTag extends React.Component {
             poemsArray: poemsArray,
           });
         });
-    };
-  }
-  //TODO: list poems with a certain list of tags.
-  //TODO: list tags.
-
-  render() {
-    console.log(this.state.poemsArray);
-    // let randomPoem = poems[0][2];
-    //   poems[Math.floor(Math.random() * poems.length)][3],
-    //   poems[Math.floor(Math.random() * poems.length)][4],
-    // ];
-    // console.log(randomPoem);
-    return (
-      <>
-        {this.state.poemsArray.map((content, index) => {
-          console.log(content);
-          return (
-            <>
-              <Divider />
-              <Card key={index} index={index}>
-                <Card.Content header={content[0]} />
-                <Card.Content>
-                  <Card.Group>
-                    <Card header={content[1]} />
-                    <Card header={content[2]} />
-                    <Card header={content[3]} />
-                  </Card.Group>
-                </Card.Content>
-              </Card>
-            </>
-          );
-        })}
-        <Card>
-          <Card.Content header={`Haiku's By You`} />
-          <Card.Content>
-            <Card.Group>
-              <Card fluid color="red" header="The days grow longer" />
-              <Card fluid color="orange" header="The months and years seem to shrink" />
-              <Card fluid color="yellow" header="I love to eat food" />
-            </Card.Group>
-          </Card.Content>
-          <Dropdown placeholder="Haiku(#Tags)" fluid multiple selection options={options} />
-          <Button onClick={this.getData} positive>
-            Get
-          </Button>
-        </Card>
-      </>
-    );
-  }
+        };
+      }
+      //TODO: list poems with a certain list of tags.
+      //TODO: list tags.
+    
+      render() {
+        console.log(this.state.poemsArray);
+        // let randomPoem = poems[0][2];
+        //   poems[Math.floor(Math.random() * poems.length)][3],
+        //   poems[Math.floor(Math.random() * poems.length)][4],
+        // ];
+        // console.log(randomPoem);
+        return (
+          <>
+            {this.state.poemsArray.map((content, index) => {
+              console.log(content);
+              return (
+                <>
+                <Divider />
+                  <Card key={index} index={index} id="haikiCards">
+                    <Card.Content header={content[0]} />
+                    <Card.Content>
+                        
+                      <Card.Group id="haikiCardPoems">
+                        <Card header={content[1]} />
+                        <Card header={content[2]} />
+                        <Card header={content[3]} />
+                      </Card.Group>
+                    </Card.Content>
+                  </Card>
+                </>
+              );
+            })}
+            <Card id="haikiCard">
+              <Card.Content header={`Haiku's By You`} />
+              <Card.Content >
+                <Card.Group >
+                  <Card fluid color="red" header="The days grow longer" />
+                  <Card fluid color="orange" header="The months and years seem to shrink" />
+                  <Card fluid color="yellow" header="I love to eat food" />
+                </Card.Group>
+              </Card.Content>
+              <Dropdown placeholder="Haiku(#Tags)" fluid multiple selection options={options} />
+              <Button onClick={this.getData} positive id="subButton">
+                Get
+              </Button>
+            </Card>
+          </>
+        );
+      }
+    
 }
 
 export default SortPoemsByTag;

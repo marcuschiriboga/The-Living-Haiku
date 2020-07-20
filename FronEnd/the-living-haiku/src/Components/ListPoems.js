@@ -2,6 +2,11 @@ import React from "react";
 import "semantic-ui-css/semantic.min.css";
 import { Card, Button, } from "semantic-ui-react";
 import firebase from "../firebase";
+import "./ListPoems.css"
+// import ListPoems from "./ListPoems.css";
+
+
+// class RandomHaikuGen extends React.Component {
 class ListAllPoems extends React.Component {
   constructor(props) {
     super(props);
@@ -68,7 +73,7 @@ class ListAllPoems extends React.Component {
             </>
           );
         })}
-        <Card>
+        <Card id="cardBox">
           <Card.Content header={`Haiku's By You`} />
           <Card.Content>
             <Card.Group>
@@ -77,7 +82,7 @@ class ListAllPoems extends React.Component {
               <Card fluid color="yellow" header="I love to eat food" />
             </Card.Group>
           </Card.Content>
-          <Button onClick={this.getData} positive>
+          <Button onClick={this.getData} positive id="subButton">
             get
           </Button>
         </Card>

@@ -64,69 +64,67 @@ class PoemEntry extends React.Component {
 		}
 	};
 
-	render() {
-		//const postPoemsData = useSelector(state => state.poemsReducer)
-		const { title, stanza1, stanza2, stanza3 } = this.state;
-		return this.props.isAuthenticated ? (
-			<Form classname="haiku_form" method="POST" onSubmit={this.handleSubmit} id="poem">
-				<Form.Field>
-					<label>Title</label>
-					<input
-						placeholder="Title of your Haiku"
-						name="title"
-						type="text"
-						onChange={this.handleChange}
-						value={title}
-						required
-					/>
-				</Form.Field>
-				<Form.Field>
-					<label>Stanza 1</label>
-					<input
-						placeholder="5 syllables"
-						name="stanza1"
-						type="text"
-						onChange={this.handleChange}
-						value={stanza1}
-						required
-					/>
-				</Form.Field>
-				<Form.Field>
-					<label>Stanza 2</label>
-					<input
-						placeholder="7 syllables"
-						name="stanza2"
-						type="text"
-						onChange={this.handleChange}
-						value={stanza2}
-						required
-					/>
-				</Form.Field>
-				<Form.Field>
-					<label>Stanza 3</label>
-					<input
-						placeholder="5 syllables"
-						name="stanza3"
-						type="text"
-						onChange={this.handleChange}
-						value={stanza3}
-						required
-					/>
-				</Form.Field>
-				<Dropdown
-					placeholder="Tag Your Poem for the Generator"
-					fluid
-					multiple
-					selection
-					options={options}
-					onChange={this.dropdownHandler}
-				/>
-				<Button type="submit">Submit</Button>
-			</Form>
-		) : (
-			<Redirect to="/Login" />
-		);
-	}
+  render() {
+    //const postPoemsData = useSelector(state => state.poemsReducer)
+    const { title, stanza1, stanza2, stanza3 } = this.state;
+    return (
+      <Form classname="haiku_form" method="POST" onSubmit={this.handleSubmit} id="poem">
+        <Form.Field className="formField">
+          <label>Title</label>
+          <input
+            placeholder="Title of your Haiku"
+            name="title"
+            type="text"
+            onChange={this.handleChange}
+            value={title}
+            required
+          />
+        </Form.Field>
+        <Form.Field className="formField">
+          <label>Stanza 1</label>
+          <input
+            placeholder="5 syllables"
+            name="stanza1"
+            type="text"
+            onChange={this.handleChange}
+            value={stanza1}
+            required
+          />
+        </Form.Field>
+        <Form.Field className="formField">
+          <label>Stanza 2</label>
+          <input
+            placeholder="7 syllables"
+            name="stanza2"
+            type="text"
+            onChange={this.handleChange}
+            value={stanza2}
+            required
+          />
+        </Form.Field>
+        <Form.Field className="formField">
+          <label>Stanza 3</label>
+          <input
+            placeholder="5 syllables"
+            name="stanza3"
+            type="text"
+            onChange={this.handleChange}
+            value={stanza3}
+            required
+          />
+        </Form.Field>
+        <Dropdown
+          placeholder="Tag Your Poem for the Generator"
+          fluid
+          multiple
+          selection
+          options={options}
+          onChange={this.dropdownHandler}
+        />
+        <Button type="submit" id="subButton">Submit</Button>
+      </Form>
+    );
+  }
 }
 
 const mapStateToProps = state => ({

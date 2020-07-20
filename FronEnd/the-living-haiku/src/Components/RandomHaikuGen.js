@@ -1,7 +1,8 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Card, Button } from "semantic-ui-react";
-// import { poemlist } from "../PoemList";
+import "./RandomHaikuGen.css"
+import { Card, Icon, Button } from "semantic-ui-react";
+import { poemlist } from "../PoemList";
 import firebase from "../firebase";
 // import PoemEntry from "../Components/PoemEntry.css";
 class RandomHaikuGen extends React.Component {
@@ -76,6 +77,7 @@ class RandomHaikuGen extends React.Component {
           </Card.Group>
         </Card.Content>
         <Button
+          id="subButton"
           positive
           onClick={() => {
             this.setState({
