@@ -28,7 +28,7 @@ class MenuBar extends React.Component {
   render() {
     return (
       <Router>
-         <div id="total_page_container">
+        <div id="total_page_container">
           <div className="dojo_container">
             <img className="dojo" src={dojo} alt="Failed to load" />
           </div>
