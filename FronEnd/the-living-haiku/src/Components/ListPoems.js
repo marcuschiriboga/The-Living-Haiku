@@ -1,6 +1,6 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Card, Icon, Button, CardContent } from "semantic-ui-react";
+import { Card, Button, } from "semantic-ui-react";
 import firebase from "../firebase";
 class RandomHaikuGen extends React.Component {
   constructor(props) {

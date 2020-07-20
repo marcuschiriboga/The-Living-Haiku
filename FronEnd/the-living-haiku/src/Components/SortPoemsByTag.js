@@ -1,6 +1,6 @@
 import React from "react"
 import "semantic-ui-css/semantic.min.css";
-import { Divider, Card, Icon, Button, Dropdown, Image } from "semantic-ui-react";
+import { Divider, Card, Button, Dropdown } from "semantic-ui-react";
 import firebase from "../firebase";
 
 

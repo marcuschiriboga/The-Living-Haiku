@@ -6,14 +6,14 @@ import _ from "lodash";
 import faker from "faker";
 import "semantic-ui-css/semantic.min.css";
 import "./NavBar.css";
-import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Container, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
+import { BrowserRouter as  Link } from "react-router-dom";
 import bamboo from "../../../Picture/Bamboo.png";
 
 
 
 //just for now
-let user = 'databaseName'
+// let user = 'databaseName'
 //need to figure this out 100%
 const source = _.times(5, () => ({
 	title: faker.company.companyName(),
@@ -22,25 +22,25 @@ const source = _.times(5, () => ({
 	price: faker.finance.amount(0, 100, 2, '$')
 }));
 
-const friendOptions = [
-	{
-		key: 'Home',
-		text: 'Home',
-		value: 'Home',
-		image: { avatar: true, src: '/images/avatar/small/jenny.jpg' }
-	},
-	{
-		key: 'Profile',
-		text: 'Profile',
-		value: 'Profile',
-		image: { avatar: true, src: '/images/avatar/small/elliot.jpg' }
-	},
-	{
-		key: 'Logout',
-		text: 'Logout',
-		value: 'Logout',
-		image: { avatar: true, src: '/images/avatar/small/stevie.jpg' }
-	}
+// const friendOptions = [
+// 	{
+// 		key: 'Home',
+// 		text: 'Home',
+// 		value: 'Home',
+// 		image: { avatar: true, src: '/images/avatar/small/jenny.jpg' }
+// 	},
+// 	{
+// 		key: 'Profile',
+// 		text: 'Profile',
+// 		value: 'Profile',
+// 		image: { avatar: true, src: '/images/avatar/small/elliot.jpg' }
+// 	},
+// 	{
+// 		key: 'Logout',
+// 		text: 'Logout',
+// 		value: 'Logout',
+// 		image: { avatar: true, src: '/images/avatar/small/stevie.jpg' }
+// 	}
 	// {
 	//     key: 'Post Poem',
 	//     text: 'Post Poem',
@@ -59,7 +59,7 @@ const friendOptions = [
 	//     value: 'Your Poems',
 	//     image: { avatar: true, src: '/images/avatar/small/justen.jpg' },
 	// },
-];
+// ];
 
 //button/dropdown
 const options = [
@@ -90,7 +90,7 @@ const options = [
 	// },
 	
 	{
-		key: 'Register',
+		key: 'Signout',
 		icon: <i className="sign out alternate icon" />,
 		text: <Link onClick={() => auth.signOut()}>Signout</Link>,
 		value: 'signout'

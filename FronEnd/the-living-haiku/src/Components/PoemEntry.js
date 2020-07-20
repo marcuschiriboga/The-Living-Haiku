@@ -1,9 +1,9 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Button, Checkbox, Form, Dropdown } from "semantic-ui-react";
+import { Button, Form, Dropdown } from "semantic-ui-react";
 import firebase from "../firebase";
 import { connect } from "react-redux";
-import PomEntry from "../Components/PoemEntry.css";
+// import PomEntry from "../Components/PoemEntry.css";
 
 const options = [
   { key: "Pets", text: "Pets", value: "pets" },

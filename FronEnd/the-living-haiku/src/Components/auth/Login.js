@@ -54,7 +54,7 @@ class Login extends React.Component {
 		if (this.props.isAuthenticated) {
 			return <Redirect to="/Profile" />;
 		}
-		const { email, password, errors, loading } = this.state;
+		const { email, password, errors } = this.state;
 		return (
 			<Fragment>
 				<div id="firebaseui-auth-container">
