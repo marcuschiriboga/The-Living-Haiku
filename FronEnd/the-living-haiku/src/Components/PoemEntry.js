@@ -68,7 +68,7 @@ class PoemEntry extends React.Component {
     const { title, stanza1, stanza2, stanza3 } = this.state;
     return (
       <Form classname="haiku_form" method="POST" onSubmit={this.handleSubmit} id="poem">
-        <Form.Field>
+        <Form.Field className="formField">
           <label>Title</label>
           <input
             placeholder="Title of your Haiku"
@@ -79,7 +79,7 @@ class PoemEntry extends React.Component {
             required
           />
         </Form.Field>
-        <Form.Field>
+        <Form.Field className="formField">
           <label>Stanza 1</label>
           <input
             placeholder="5 syllables"
@@ -90,7 +90,7 @@ class PoemEntry extends React.Component {
             required
           />
         </Form.Field>
-        <Form.Field>
+        <Form.Field className="formField">
           <label>Stanza 2</label>
           <input
             placeholder="7 syllables"
@@ -101,7 +101,7 @@ class PoemEntry extends React.Component {
             required
           />
         </Form.Field>
-        <Form.Field>
+        <Form.Field className="formField">
           <label>Stanza 3</label>
           <input
             placeholder="5 syllables"
@@ -120,7 +120,7 @@ class PoemEntry extends React.Component {
           options={options}
           onChange={this.dropdownHandler}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" id="subButton">Submit</Button>
       </Form>
     );
   }

@@ -180,16 +180,18 @@ class Register extends Component {
 									className={this.handleInputError(errors, 'password')}
 									type="password"
 								/>
-
+								<div id="buttonContainer">
 								<Button
 									disabled={loading}
 									className={loading ? 'loading' : ''}
 									color="blue"
 									fluid
 									size="large"
+									id="subButton"
 								>
 									Submit
 								</Button>
+								</div>
 								{/* onSubmit={() => dispatch(registerSuccuss(userData))} */}
 							</Segment>
 						</Form>

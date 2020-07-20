@@ -1,5 +1,6 @@
 import React from "react"
 import "semantic-ui-css/semantic.min.css";
+import "./SortPoemsByTag.css"
 import { Divider, Card, Icon, Button, Dropdown, Image } from "semantic-ui-react";
 import firebase from "../firebase";
 
@@ -83,11 +84,11 @@ class SortPoemsByTag extends React.Component {
               return (
                 <>
                 <Divider />
-                  <Card key={index} index={index}>
+                  <Card key={index} index={index} id="haikiCards">
                     <Card.Content header={content[0]} />
                     <Card.Content>
                         
-                      <Card.Group>
+                      <Card.Group id="haikiCardPoems">
                         <Card header={content[1]} />
                         <Card header={content[2]} />
                         <Card header={content[3]} />
@@ -97,17 +98,17 @@ class SortPoemsByTag extends React.Component {
                 </>
               );
             })}
-            <Card>
+            <Card id="haikiCard">
               <Card.Content header={`Haiku's By You`} />
-              <Card.Content>
-                <Card.Group>
+              <Card.Content >
+                <Card.Group >
                   <Card fluid color="red" header="The days grow longer" />
                   <Card fluid color="orange" header="The months and years seem to shrink" />
                   <Card fluid color="yellow" header="I love to eat food" />
                 </Card.Group>
               </Card.Content>
               <Dropdown placeholder="Haiku(#Tags)" fluid multiple selection options={options} />
-              <Button onClick={this.getData} positive>
+              <Button onClick={this.getData} positive id="subButton">
                 Get
               </Button>
             </Card>

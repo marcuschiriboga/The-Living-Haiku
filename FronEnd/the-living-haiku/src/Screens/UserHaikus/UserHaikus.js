@@ -1,6 +1,6 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-//import "./UserHaikus.css";
+import "./UserHaikus.css";
 import { Divider, Container } from "semantic-ui-react";
 import ListPoems from "../../Components/ListPoems"
 import NavBar from "../../Components/navigation/NavBar/NavBar";
@@ -18,7 +18,7 @@ class UserHaikus extends React.Component {
         <NavBar />
 
         <Divider />
-        <Container id="postPage">
+        <Container id="postPageOne">
             <ListPoems />
         </Container>
       </Container>
