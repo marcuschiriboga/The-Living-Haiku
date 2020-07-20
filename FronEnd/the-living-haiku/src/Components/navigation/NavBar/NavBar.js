@@ -1,16 +1,33 @@
-import { auth } from "../../../firebase";
-
-import React from "react";
-import _ from "lodash";
-import faker from "faker";
-import "semantic-ui-css/semantic.min.css";
-import "./NavBar.css";
-import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { auth } from '../../../firebase';
+// <<<<<<< HEAD
+import { connect } from 'react-redux';
+import React from 'react';
+import _ from 'lodash';
+import faker from 'faker';
+import 'semantic-ui-css/semantic.min.css';
+import './NavBar.css';
+import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from 'semantic-ui-react';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import bamboo from "../../../Picture/Bamboo.png";
 
 //just for now
-let user = "databaseName";
+// let user = 'databaseName';
+// =======
+
+// import React from "react";
+// import _ from "lodash";
+// import faker from "faker";
+// import "semantic-ui-css/semantic.min.css";
+// import "./NavBar.css";
+// import { Container, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
+// import { BrowserRouter as  Link } from "react-router-dom";
+// import bamboo from "../../../Picture/Bamboo.png";
+
+
+
+//just for now
+// let user = 'databaseName'
+// >>>>>>> master
 //need to figure this out 100%
 const source = _.times(5, () => ({
   title: faker.company.companyName(),
@@ -19,78 +36,57 @@ const source = _.times(5, () => ({
   price: faker.finance.amount(0, 100, 2, "$"),
 }));
 
-const friendOptions = [
-  {
-    key: "Home",
-    text: "Home",
-    value: "Home",
-    image: { avatar: true, src: "/images/avatar/small/jenny.jpg" },
-  },
-  {
-    key: "Profile",
-    text: "Profile",
-    value: "Profile",
-    image: { avatar: true, src: "/images/avatar/small/elliot.jpg" },
-  },
-  {
-    key: "Logout",
-    text: "Logout",
-    value: "Logout",
-    image: { avatar: true, src: "/images/avatar/small/stevie.jpg" },
-  },
-  // {
-  //     key: 'Post Poem',
-  //     text: 'Post Poem',
-  //     value: 'Post Poem',
-  //     image: { avatar: true, src: '/images/avatar/small/christian.jpg' },
-  // },
-  // {
-  //     key: 'Top Poems',
-  //     text: 'Top Poems',
-  //     value: 'Top Poems',
-  //     image: { avatar: true, src: '/images/avatar/small/matt.jpg' },
-  // },
-  // {
-  //     key: 'Your Poems',
-  //     text: 'Your Poems',
-  //     value: 'Your Poems',
-  //     image: { avatar: true, src: '/images/avatar/small/justen.jpg' },
-  // },
-];
+// const friendOptions = [
+// 	{
+// 		key: 'Home',
+// 		text: 'Home',
+// 		value: 'Home',
+// 		image: { avatar: true, src: '/images/avatar/small/jenny.jpg' }
+// 	},
+// 	{
+// 		key: 'Profile',
+// 		text: 'Profile',
+// 		value: 'Profile',
+// 		image: { avatar: true, src: '/images/avatar/small/elliot.jpg' }
+// 	},
+// 	{
+// 		key: 'Logout',
+// 		text: 'Logout',
+// 		value: 'Logout',
+// 		image: { avatar: true, src: '/images/avatar/small/stevie.jpg' }
+// 	}
+	// {
+	//     key: 'Post Poem',
+	//     text: 'Post Poem',
+	//     value: 'Post Poem',
+	//     image: { avatar: true, src: '/images/avatar/small/christian.jpg' },
+	// },
+	// {
+	//     key: 'Top Poems',
+	//     text: 'Top Poems',
+	//     value: 'Top Poems',
+	//     image: { avatar: true, src: '/images/avatar/small/matt.jpg' },
+	// },
+	// {
+	//     key: 'Your Poems',
+	//     text: 'Your Poems',
+	//     value: 'Your Poems',
+	//     image: { avatar: true, src: '/images/avatar/small/justen.jpg' },
+	// },
+// ];
 
 //button/dropdown
 const options = [
-  // {
-  // 	key: 'Home',
-  // 	icon: <i className="home icon" />,
-  // 	text: <Link to="/">Home</Link>,
-  // 	value: 'Home'
-  // },
-  // {
-  // 	key: 'Profile',
-  // 	icon: <i className="user icon" />,
-  // 	text: <Link to="/Profile">Profile</Link>,
-  // 	value: 'Profile'
-  // },
-  // {
-  // 	key: 'Logout',
-  // 	icon: <i className="sign out alternate icon" />,
-  // 	text: <Link to="/Login">Login</Link>,
-  // 	value: 'Logout'
-  // },
-  // {
-  // 	key: 'Register',
-  // 	icon: <i className="sign out alternate icon" />,
-  // 	text: <Link to="/Register">Register</Link>,
-  // 	value: 'register'
-  // },
-
-  {
-    key: "Register",
-    icon: <i className="sign out alternate icon" />,
-    text: <Link onClick={() => auth.signOut()}>Signout</Link>,
-    value: "signout",
-  },
+	{
+		key: 'Signout',
+		icon: <i className="sign out alternate icon" />,
+		text: (
+			<Link onClick={() => auth.signOut()} to="/Login">
+				Signout
+			</Link>
+		),
+		value: 'signout'
+	},
   {
     key: "Home",
     icon: <i className="home icon"></i>,

@@ -7,14 +7,14 @@ import { connect } from 'react-redux';
 // import Register from "./Components/auth/Register";
 // import PageNotFound from "./Components/PageNotFound";
 
-import Login from './Components/auth/Login';
+// import Login from './Components/auth/Login';
 import MenuBar from './Components/navigation/MenuBar';
-import Register from './Components/auth/Register';
+// import Register from './Components/auth/Register';
 //import HomeScreen from './Screens/HomeScreen/HomeScreen';
 //import RegisterScreen from './Screens/RegisterScreen/RegisterScreen';
 //import MenuBar from './Components/navigation/MenuBar';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 const App = ({ currentUser, setCurrentUser, clearCurrentUser }) => {
 	// return (
