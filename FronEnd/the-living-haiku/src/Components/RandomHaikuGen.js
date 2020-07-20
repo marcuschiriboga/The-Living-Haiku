@@ -3,6 +3,7 @@ import "semantic-ui-css/semantic.min.css";
 import { Card, Icon, Button } from "semantic-ui-react";
 import { poemlist } from "../PoemList";
 import firebase from "../firebase";
+import PoemEntry from "../Components/PoemEntry.css";
 class RandomHaikuGen extends React.Component {
   constructor(props) {
     super(props);
@@ -67,7 +68,7 @@ class RandomHaikuGen extends React.Component {
     // this.getData();
     return (
       <Card>
-        <Card.Content>
+        <Card.Content id="poem">
           <Card.Group>
             <Card fluid color="red" header={this.state.stanza1} />
             <Card fluid color="orange" header={this.state.stanza2} />

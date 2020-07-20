@@ -1,3 +1,32 @@
+
+This Project is a joint effort of Marcus Chiriboga, Wesely Salesberry, Timothy Reynoso, Darian Martinez, and Greg Hodges.
+
+The Brain Child of Marcus Chiriboga, The living Haiku, is a simple app that allows one to view randomly generated haiku's from a list of users haikus without needing to login. Once an account has been created the user is also able to input their own haiku, and update a profile to see the list of haiku's they have authored, upload a profile picture, and display a little info about themselves. This app is meant to bring joy to the lives of those who are in need of a smile. :)
+
+v1.0.0
+Any updates to the app will be reflected in the README.md here.
+
+Our app can be visited here https://the-living-haiku.web.app
+
+Our team collaborated with numberous environments. 
+1. (Scrum) Trello https://trello.com/b/RZyY6viP/the-living-haiku
+2. Zoom https://kenzie.zoom.us/j/2304021448
+3. https://gitlab.com/GregHodges/the-living-haiku
+
+Though titles were given, each one of us contributed to the organization, development and overall project anywhere our talents allowed.
+
+Our group consited of 
+ Vincent St.Louis  - Investor
+ Marcus Chiriboga - Project Owner
+ Wesely Salesberry - Backend Developer
+ Timothy Reynoso - Frontend Developer
+ Darian Martinez - Styling Coordinator
+ Greg Hodges - Scrum Master and Git Repo
+
+ 
+A list of imports used for the project include:
+ React, Redux, Firebase, Semantic ui, Axios, uuid, and animate.css
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

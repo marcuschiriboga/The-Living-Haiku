@@ -1,12 +1,26 @@
-import React from 'react';
+// <<<<<<< HEAD
+// import React from 'react';
 import { auth } from '../../../firebase';
-import _ from 'lodash';
-import faker from 'faker';
-import 'semantic-ui-css/semantic.min.css';
-import './NavBar.css';
-import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from 'semantic-ui-react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+// import _ from 'lodash';
+// import faker from 'faker';
+// import 'semantic-ui-css/semantic.min.css';
+// import './NavBar.css';
+// import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from 'semantic-ui-react';
+// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+// =======
+import React from "react";
+import _ from "lodash";
+import faker from "faker";
+import "semantic-ui-css/semantic.min.css";
+import "./NavBar.css";
+import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import dojo from "../../../Picture/dojo.png";
+// >>>>>>> master
 
+
+//just for now
+let user = 'databaseName'
 //need to figure this out 100%
 const source = _.times(5, () => ({
 	title: faker.company.companyName(),
@@ -56,6 +70,7 @@ const friendOptions = [
 
 //button/dropdown
 const options = [
+
 	{
 		key: 'Home',
 		icon: <i className="home icon" />,
@@ -85,7 +100,51 @@ const options = [
 		icon: <i className="sign out alternate icon" />,
 		text: <Link onClick={() => auth.signOut()}>Signout</Link>,
 		value: 'signout'
-	}
+	},
+
+  {
+    key: "Home",
+    icon: <i className="home icon"></i>,
+    text: <Link to="/">Home</Link>,
+    value: "Home",
+  },
+  {
+    key: "Profile",
+    icon: <i className="user icon"></i>,
+    text: <Link to="/Profile">Profile</Link>,
+    value: "Profile",
+  },
+  {
+    key: "Logout",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/Login">Login</Link>,
+    value: "Logout",
+  },
+  {
+    key: "Register",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/Register">Register</Link>,
+    value: "register",
+  },
+  {
+    key: "PostPoems",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/PostPoems">Post Poems</Link>,
+    value: "PostPoems",
+  },
+  {
+    key: "UserHaikus",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/UserHaikus">{user}'s Haikus</Link>,
+    value: "UserHaikus",
+  },
+  {
+    key: "GetPoemsByTags",
+    icon: <i className="sign out alternate icon"></i>,
+    text: <Link to="/GetPoemsByTags">Haiku's By #Tag</Link>,
+    value: "GetPoemsByTags",
+  }
+
 ];
 
 class NavBar extends React.Component {
@@ -118,15 +177,16 @@ class NavBar extends React.Component {
 			});
 		}, 300);
 	};
-	//++++++++
+	
 
-	render() {
-		const { isLoading, value, results } = this.state;
-		return (
-			<Container>
-				<div id="navContainer">
-					<Image id="image" src="https://react.semantic-ui.com/images/wireframe/image.png" />
 
+
+  render() {
+    const { isLoading, value, results } = this.state;
+    return (
+      <Container>
+        <div id="navContainer">
+          <Image id="image" src={dojo} />
 					<div id="dropDown">
 						<Button.Group color="teal">
 							<Button>
