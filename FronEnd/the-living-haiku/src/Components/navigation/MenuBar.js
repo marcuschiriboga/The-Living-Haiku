@@ -1,20 +1,20 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Image, List } from "semantic-ui-react";
+// import { Image, List } from "semantic-ui-react";
 import "./MenuBar.css";
 //import "./MenuBar.css"
 // import { Login } from "../../Components"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import PageNotFound from "../PageNotFound.js";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import PageNotFound from "../PageNotFound.js";
 
 //import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen"
 import ProfileScreen from "../../Screens/ProfileScreen/ProfileScreen";
 import HomeScreen from "../../Screens/HomeScreen/HomeScreen";
 import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen";
-import AllPoemsScreen from "../../Screens/AllPoemsScreen/AllPoemsScreen";
+// import AllPoemsScreen from "../../Screens/AllPoemsScreen/AllPoemsScreen";
 
 //TODO: TO SCREENS
-import Register from "../auth/Register";
+// import Register from "../auth/Register";
 import RegisterScreen from "../../Screens/RegisterScreen/RegisterScreen";
 import NavBar from "./NavBar/NavBar";
 import PostPoemsScreen from "../../Screens/PostPoemsScreen/PostPoemsScreen";
@@ -32,7 +32,7 @@ class MenuBar extends React.Component {
   render() {
     return (
       <Router>
-         <div id="total_page_container">
+        <div id="total_page_container">
           <div className="dojo_container">
             <img className="dojo" src={dojo} alt="Failed to load" />
           </div>

@@ -11,6 +11,7 @@ class GetPoemsByTags extends React.Component {
 
     this.state = {};
   }
+  
 
   render() {
     return (
@@ -20,7 +21,9 @@ class GetPoemsByTags extends React.Component {
         <Divider />
         <Container id="postPage">
             <SortPoemsByTag />
-        </Container>
+            
+         </Container>
+        
       </Container>
     );
   }
