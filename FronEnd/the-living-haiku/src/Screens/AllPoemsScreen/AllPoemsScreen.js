@@ -26,10 +26,10 @@ class ProfileScreen extends React.Component {
           </div>
         </div>
         <Container id="profileContainer">
-          <Container id="leftSideBar">
-            <LeftSideBar />
+          {/* <Container id="leftSideBar">
+            <LeftSideBar /> */}
             <div class="moon" />
-          </Container>
+          {/* </Container> */}
           <Container id="profileComponent">
             <ListPoems />
           </Container>

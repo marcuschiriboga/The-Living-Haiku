@@ -22,7 +22,7 @@ class HomeScreen extends React.Component {
 
         <Divider />
         <Container id="Homepage">
-          <LeftSideBar />
+          {/* <LeftSideBar /> */}
           <Container id="homeContainer">
             <RandomHaikuGen />
           </Container>

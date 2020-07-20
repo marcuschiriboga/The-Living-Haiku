@@ -27,11 +27,11 @@ class ProfileScreen extends React.Component {
           </div>
         </div>
         <Container id="profileContainer">
-          <Container id="leftSideBar">
-            <LeftSideBar />
-            <PoemEntry />
+          {/* <Container id="leftSideBar"> */}
+            {/* <LeftSideBar /> */}
+            {/* <PoemEntry /> */}
             <div class="moon" />
-          </Container>
+          {/* </Container> */}
           <Container id="profileComponent">
             <ProfileComponent />
           </Container>

@@ -8,7 +8,7 @@ import "semantic-ui-css/semantic.min.css";
 import "./NavBar.css";
 import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import dojo from "../../../Picture/dojo.png";
+import bamboo from "../../../Picture/Bamboo.png";
 
 
 
@@ -122,13 +122,13 @@ const options = [
   {
     key: "PostPoems",
     icon: <i className="sign out alternate icon"></i>,
-    text: <Link to="/PostPoems">Post Poems</Link>,
+    text: <Link to="/PostPoems">Contribute Poems</Link>,
     value: "PostPoems",
   },
   {
     key: "UserHaikus",
     icon: <i className="sign out alternate icon"></i>,
-    text: <Link to="/UserHaikus">{user}'s Haikus</Link>,
+    text: <Link to="/UserHaikus">Your Haikus</Link>,
     value: "UserHaikus",
   },
   {
@@ -179,32 +179,33 @@ class NavBar extends React.Component {
     return (
       <Container>
         <div id="navContainer">
-          <Image id="image" src={dojo} />
-					<div id="dropDown">
-						<Button.Group color="teal">
-							<Button>
-								<Grid>
-									<Grid.Column width={6}>
-										<Search
-											loading={isLoading}
-											onResultSelect={this.handleResultSelect}
-											onSearchChange={_.debounce(this.handleSearchChange, 500, {
-												leading: true
-											})}
-											results={results}
-											value={value}
-											{...this.props}
-										/>
-									</Grid.Column>
-								</Grid>
-							</Button>
-							<Dropdown className="button icon" floating options={options} trigger={<React.Fragment />} />
-						</Button.Group>
-					</div>
-				</div>
-			</Container>
-		);
-	}
+          <Image id="image" src={bamboo} />
+
+          <div id="dropDown">
+            <Button.Group color="teal">
+              <Button>
+                <Grid>
+                  <Grid.Column width={6}>
+                    <Search
+                      loading={isLoading}
+                      onResultSelect={this.handleResultSelect}
+                      onSearchChange={_.debounce(this.handleSearchChange, 500, {
+                        leading: true,
+                      })}
+                      results={results}
+                      value={value}
+                      {...this.props}
+                    />
+                  </Grid.Column>
+                </Grid>
+              </Button>
+              <Dropdown className="button icon" floating options={options} trigger={<React.Fragment />}></Dropdown>
+            </Button.Group>
+          </div>
+        </div>
+      </Container>
+    );
+  }
 }
 
 export default NavBar;

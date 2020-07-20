@@ -1,14 +1,28 @@
 import React from "react"
 import "semantic-ui-css/semantic.min.css";
-import { Card, Icon, Button, Dropdown, Image } from "semantic-ui-react";
+import { Divider, Card, Icon, Button, Dropdown, Image } from "semantic-ui-react";
 import firebase from "../firebase";
 
+
+
+
 const options = [
-	{ key: 'abstract', text: 'Abstract', value: 'abstract' },
-	{ key: 'city', text: 'City', value: 'city' },
-	{ key: 'night', text: 'Night', value: 'night' },
-    { key: 'earth', text: 'Earth', value: 'earth' }
-]
+  { key: "Pets", text: "Pets", value: "pets" },
+  { key: "Nature", text: "Nature", value: "nature" },
+  { key: "love", text: "Love ", value: "love" },
+  { key: "Home", text: "Home", value: "home" },
+  { key: "Identity", text: "Identity", value: "identity" },
+  { key: "Self", text: "Self", value: "self" },
+  { key: "Spiritual", text: "Spiritual", value: "spiritual" },
+  { key: "Toys", text: "Toys", value: "toys" },
+  { key: "Games", text: "Games", value: "Games" },
+  { key: "Time", text: "Time", value: "time" },
+  { key: "Place", text: "Place", value: "place" },
+  { key: "Future", text: "Future", value: "future" },
+  { key: "Food", text: "Food", value: "food" },
+  { key: "Sadness", text: "Sadness", value: "sadness" },
+  { key: "Educational", text: "Educational", value: "Educational" },
+];
     
 class SortPoemsByTag extends React.Component {
 
@@ -68,7 +82,7 @@ class SortPoemsByTag extends React.Component {
               console.log(content);
               return (
                 <>
-                <div>h</div>
+                <Divider />
                   <Card key={index} index={index}>
                     <Card.Content header={content[0]} />
                     <Card.Content>
@@ -94,7 +108,7 @@ class SortPoemsByTag extends React.Component {
               </Card.Content>
               <Dropdown placeholder="Haiku(#Tags)" fluid multiple selection options={options} />
               <Button onClick={this.getData} positive>
-                get
+                Get
               </Button>
             </Card>
           </>
