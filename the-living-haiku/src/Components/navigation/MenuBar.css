@@ -1,4 +1,8 @@
 #total_page_container {
+  background-image: url("../../Picture/Bamboo.png");
+  background-size: 20% 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   margin: 30px 0px 0px 0px;
@@ -31,6 +35,14 @@ h3 {
   margin: 9px auto;
   width: 170px;
 }
+.bamboo {
+  background-image: url("/the-living-haiku/src/Picture/Bamboo.png");
+  display: flex;
+  flex-direction: column;
+  margin: 9px auto;
+  height: 1000px;
+}
+
 .menu {
   position: relative;
   margin: auto;

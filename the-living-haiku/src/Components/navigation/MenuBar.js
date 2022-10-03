@@ -1,26 +1,22 @@
 import React from "react";
 import "semantic-ui-css/semantic.min.css";
-// import { Image, List } from "semantic-ui-react";
 import "./MenuBar.css";
-//import "./MenuBar.css"
-// import { Login } from "../../Components"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import PageNotFound from "../PageNotFound.js";
 
-//import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen"
 import ProfileScreen from "../../Screens/ProfileScreen/ProfileScreen";
 import HomeScreen from "../../Screens/HomeScreen/HomeScreen";
 import SignUpScreen from "../../Screens/SignUpScreen/SignUpScreen";
 import AllPoemsScreen from "../../Screens/AllPoemsScreen/AllPoemsScreen";
+import { Container, Card, Feed, Search, Grid, Dropdown, Image, Button } from 'semantic-ui-react';
 
 //TODO: TO SCREENS
-// import Register from "../auth/Register";
 import RegisterScreen from "../../Screens/RegisterScreen/RegisterScreen";
 import NavBar from "./NavBar/NavBar";
 import PostPoemsScreen from "../../Screens/PostPoemsScreen/PostPoemsScreen";
 import UserHaikus from "../../Screens/UserHaikus/UserHaikus";
 import GetPoemsByTags from "../../Screens/GetPoemsByTags/GetPoemsByTags";
 import dojo from "../../Picture/dojo.png";
+import bamboo from "../../Picture/Bamboo.png";
 
 class MenuBar extends React.Component {
   constructor(props) {
@@ -30,6 +26,7 @@ class MenuBar extends React.Component {
   }
   render() {
     return (
+      
       <Router>
         <div id="total_page_container">
           <div className="dojo_container">
@@ -39,45 +36,6 @@ class MenuBar extends React.Component {
             <h1 className="animate__fadeIn">The Living Haiku</h1>
             <h3>生きている俳句</h3>
           </div>
-          {/* <div className="menu">
-            Menu
-          </div> */}
-          {/* <Image id="image" src='https://react.semantic-ui.com/images/wireframe/image.png' size='tiny' /> */}
-
-          {/* <List id="menu" animated verticalAlign='middle'>
-                    <List.Item>
-                        <Image avatar src='https://react.semantic-ui.com/images/avatar/small/helen.jpg' />
-                        <List.Content>
-                            <List.Header>
-                                <Link to="/">Home</Link>
-                            </List.Header>
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <Image avatar src='https://react.semantic-ui.com/images/avatar/small/christian.jpg' />
-                        <List.Content>
-                            <List.Header>
-                                <Link to="/Profile">Profile</Link>
-                            </List.Header>
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <Image avatar src='https://react.semantic-ui.com/images/avatar/small/daniel.jpg' />
-                        <List.Content>
-                            <List.Header>
-                                <Link to="/Logout">Logout</Link>
-                            </List.Header>
-                        </List.Content>
-                    </List.Item>
-                    <List.Item>
-                        <Image avatar src='https://react.semantic-ui.com/images/avatar/small/daniel.jpg' />
-                        <List.Content>
-                            <List.Header>
-                                <Link to="/test">test</Link>
-                            </List.Header>
-                        </List.Content>
-                    </List.Item>
-                </List> */}
 
           <Switch>
             <Route path="/Logout">

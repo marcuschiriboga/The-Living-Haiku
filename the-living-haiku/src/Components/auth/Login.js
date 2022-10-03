@@ -22,9 +22,6 @@ class Login extends React.Component {
 	isformValid = ({ email, password }) => email && password;
 	displayErrors = ({ errors }) => errors.map(error => <p key={uuidv4()}>{error.message}</p>);
 	handleChange = evt => this.setState({ [evt.target.name]: evt.target.value });
-	// handleInputError = (errors, inputName) => {
-	// 	return errors.some(error => error.message.toLowerCase().includes(inputName)) ? 'error' : '';
-	// };
 
 	handleSubmit = evt => {
 		evt.preventDefault();

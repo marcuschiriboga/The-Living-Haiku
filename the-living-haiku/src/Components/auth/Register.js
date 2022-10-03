@@ -111,23 +111,7 @@ class Register extends Component {
 		const { username, email, password, passwordConfirmation, errors, loading } = this.state;
 		return (
 			<div id="registerForm">
-{/* <<<<<<< HEAD
-				<Grid textAlign="center" verticalAlign="middle" className="app">
-					<Grid.Column style={{ maxWidth: 450 }}>
-						<Form onSubmit={this.handleSubmit} size="large" id="registerFromForm">
-							<Segment stacked>
-								<Form.Input
-									fluid
-									name="username"
-									icon="user"
-									iconPosition="left"
-									placeholder="Username"
-									onChange={this.handleChange}
-									value={username}
-									className={this.handleInputError(errors, 'username')}
-									type="text"
-								/>
-======= */}
+
 			<Grid textAlign="center" verticalAlign="middle" className="app" >
 				<Grid.Column style={{ maxWidth: 450 }}>
 					<Form onSubmit={this.handleSubmit} size="large" >
@@ -143,8 +127,6 @@ class Register extends Component {
 								className={this.handleInputError(errors, 'username')}
 								type="text"
 							/>
-{/* >>>>>>> master */}
-
 								<Form.Input
 									fluid
 									name="email"
