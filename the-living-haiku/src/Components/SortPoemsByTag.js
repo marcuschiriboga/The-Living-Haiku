@@ -31,6 +31,7 @@ class SortPoemsByTag extends React.Component {
       poemsArray: [],
     };
     this.getData = () => {
+      //TODO:: what is this user ID for
       let userId = "DcKwK9kCAnRJrpudqVJS1bj9szh2";
       firebase
         .database()
@@ -68,11 +69,6 @@ class SortPoemsByTag extends React.Component {
     
       render() {
         console.log(this.state.poemsArray);
-        // let randomPoem = poems[0][2];
-        //   poems[Math.floor(Math.random() * poems.length)][3],
-        //   poems[Math.floor(Math.random() * poems.length)][4],
-        // ];
-        // console.log(randomPoem);
         return (
           <>
             {this.state.poemsArray.map((content, index) => {

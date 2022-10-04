@@ -4,7 +4,6 @@ import "./RandomHaikuGen.css"
 import { Card, Icon, Button } from "semantic-ui-react";
 import { poemlist } from "../PoemList";
 import firebase from "../firebase";
-// import PoemEntry from "../Components/PoemEntry.css";
 class RandomHaikuGen extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +32,6 @@ class RandomHaikuGen extends React.Component {
     let getData = () => {
       firebase
         .database()
-        // .ref(`/users/${userId}/poems/`)
         .ref(`allpoems/`)
         .once("value")
         .then((snapshot) => {
@@ -66,7 +64,6 @@ class RandomHaikuGen extends React.Component {
     getData();
   }
   render() {
-    // this.getData();
     return (
       <Card>
         <Card.Content id="poem">

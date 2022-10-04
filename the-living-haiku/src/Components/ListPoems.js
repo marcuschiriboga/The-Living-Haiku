@@ -19,7 +19,6 @@ class ListAllPoems extends React.Component {
       firebase
         .database()
         .ref(`/allpoems/`)
-        // .ref(`allpoems/`)
         .once("value")
         .then((snapshot) => {
           var poems = snapshot.val();
@@ -48,12 +47,6 @@ class ListAllPoems extends React.Component {
   //TODO: list tags.
 
   render() {
-    console.log(this.state.poemsArray);
-    // let randomPoem = poems[0][2];
-    //   poems[Math.floor(Math.random() * poems.length)][3],
-    //   poems[Math.floor(Math.random() * poems.length)][4],
-    // ];
-    // console.log(randomPoem);
     return (
       <>
         {this.state.poemsArray.map((content, index) => {

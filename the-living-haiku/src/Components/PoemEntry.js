@@ -44,9 +44,7 @@ class PoemEntry extends React.Component {
 	};
 	handleChange = evt => this.setState({ [evt.target.name]: evt.target.value });
 	handleSubmit = evt => {
-		// console.log(evt);
 		evt.preventDefault();
-		// console.log(this.state);
 		let userId = this.props.currentUser.uid;
 		let poemData = {
 			title: this.state.title,
@@ -56,7 +54,6 @@ class PoemEntry extends React.Component {
 			tags: this.state.tags
 		};
 		var newPostKey = firebase.database().ref().child('posts').push().key;
-		// console.log(newPostKey);
 		if (this.isFormValid({ userId, poemData })) {
 			console.log(poemData);
 			firebase.database().ref(`users/${userId}/poems/${newPostKey}`).set(poemData);
@@ -65,7 +62,6 @@ class PoemEntry extends React.Component {
 	};
 
   render() {
-    //const postPoemsData = useSelector(state => state.poemsReducer)
     const { title, stanza1, stanza2, stanza3 } = this.state;
     return (
       <Form classname="haiku_form" method="POST" onSubmit={this.handleSubmit} id="poem">
